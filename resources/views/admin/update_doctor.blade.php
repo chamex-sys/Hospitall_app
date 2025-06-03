@@ -46,7 +46,7 @@
             </div>
              <div style="padding: 15px;">
                 <label>Phone</label>
-                <input type="number" name="phone" value="{{$data->phone}}">
+                <input type="number" style="color: black; name="phone" value="{{$data->phone}}">
             </div>
              <div style="padding: 15px;">
                 <label>DoctoR Speciality</label>
@@ -57,8 +57,16 @@
                 <input style="color: black;" type="number" name="room" value="{{$data->room}}">
             </div>
              <div style="padding: 15px;">
-                <label>Doctor name</label>
-                <input  style="color: black;" type="text" name="name" value="{{$data->name}}">
+                <label>Old Image</label>
+                 <img height="150" width="150"   src="doctorimage/{{$data->image}}">
+            </div>
+              <div style="padding: 15px;">
+                <label>Change Image</label>
+                  <input type="file" name="file">
+            </div>
+                  <div style="padding: 15px;">
+            
+                  <input type="submit" class="btn btn-primary">
             </div>
          </form> 
      </div>    
