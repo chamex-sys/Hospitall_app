@@ -68,7 +68,7 @@ $doctor->room=$request->room ;
 $image=$request->file ;
         if($image)
         {
-$imagename=time().'.'.$image->getOriginalClientExtension();
+$imagename=time().'.'.$image->getClientOriginalExtension()
 $request->file->move('doctorimage',$imagename);
 $doctor->image=$imagename ; }
     $doctor->save();
