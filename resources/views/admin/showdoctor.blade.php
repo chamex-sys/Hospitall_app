@@ -47,7 +47,7 @@
           <td>{{$doctor->phone}}</td>
           <td>{{$doctor->speciality}}</td>
           <td>{{$doctor->room}}</td>
-          <td><img width="100"  height="100" src="doctorimage/{{$doctor->image}}" alt=""></td>
+          <td><img width="100"  height="100" src="doctorimage/{{$doctor->}}" alt=""></td>
         </tr>
         @endforeach
       
