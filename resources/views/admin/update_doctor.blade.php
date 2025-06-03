@@ -32,10 +32,30 @@
        @include('admin.navbar')
         <!-- partial -->
      <div class="container-fluid page-body-wrapper">
-        {{$data->name}}
-        {{$data->phone}}
-        {{$data->speciality}}
-        {{$data->room}}
+     <div class="container" align="center" style="padding: 100px">
+         <form>
+            <div>
+                <label>Doctor name</label>
+                <input style="color: black;" type="text" name="name" value="{{$data->name}}">
+            </div>
+             <div>
+                <label>Phone</label>
+                <input type="number" name="phone" value="{{$data->phone}}">
+            </div>
+             <div>
+                <label>DoctoR Speciality</label>
+                <input  style="color: black;" type="text" name="speciality" value="{{$data->speciality}}">
+            </div>
+             <div>
+                <label>Doctor Room number</label>
+                <input style="color: black;" type="number" name="room" value="{{$data->room}}">
+            </div>
+             <div>
+                <label>Doctor name</label>
+                <input  style="color: black;" type="text" name="name" value="{{$data->name}}">
+            </div>
+         </form> 
+     </div>    
          
      </div>
     <!-- plugins:js -->
