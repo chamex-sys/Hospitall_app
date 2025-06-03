@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <base href="/public">
     @include('admin.css')
   </head>
   <body>
@@ -30,7 +31,13 @@
         <!-- partial:partials/_navbar.html -->
        @include('admin.navbar')
         <!-- partial -->
-     
+     <div class="container-fluid page-body-wrapper">
+        {{$data->name}}
+        {{$data->phone}}
+        {{$data->speciality}}
+        {{$data->room}}
+         
+     </div>
     <!-- plugins:js -->
     @include('admin.js')
     <!-- End custom js for this page -->
