@@ -39,8 +39,9 @@
         <!-- partial -->
      <div class="container-fluid page-body-wrapper">
      <div class="container" align="center" style="padding: 100px;">
-         <form>
-            <div style="padding: 15px;">
+         <form action="{{url('editdoctor' , $data->id)}}" method="POST" enctype="multipart/form-data">
+            @csrf
+             <div style="padding: 15px;">
                 <label>Doctor name</label>
                 <input style="color: black;" type="text" name="name" value="{{$data->name}}">
             </div>
