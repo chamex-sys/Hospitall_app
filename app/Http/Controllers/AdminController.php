@@ -46,7 +46,13 @@ return redirect()->back()->with('message', 'Doctor Added successfully');
   $data = doctor :: all();
    return view('admin.showdoctor', compact('data'));
  }
-   
+    
+   public function deletedoctor($id){
+       $data=doctor::find($id);
+       $data->delete();
+       return redirect()->back();
+       
+   }
 
 
 }
