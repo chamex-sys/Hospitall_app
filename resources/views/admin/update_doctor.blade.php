@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
       <base href="/public">
+      <style>
+          label{
+              display: inline-block;
+              width: 200px;
+          }
+      </style>
     @include('admin.css')
   </head>
   <body>
@@ -32,25 +38,25 @@
        @include('admin.navbar')
         <!-- partial -->
      <div class="container-fluid page-body-wrapper">
-     <div class="container" align="center" style="padding: 100px">
+     <div class="container" align="center" style="padding: 100px;">
          <form>
-            <div>
+            <div style="padding: 15px;">
                 <label>Doctor name</label>
                 <input style="color: black;" type="text" name="name" value="{{$data->name}}">
             </div>
-             <div>
+             <div style="padding: 15px;">
                 <label>Phone</label>
                 <input type="number" name="phone" value="{{$data->phone}}">
             </div>
-             <div>
+             <div style="padding: 15px;">
                 <label>DoctoR Speciality</label>
                 <input  style="color: black;" type="text" name="speciality" value="{{$data->speciality}}">
             </div>
-             <div>
-                <label>Doctor Room number</label>
+             <div style="padding: 15px;">
+                <label>Room number</label>
                 <input style="color: black;" type="number" name="room" value="{{$data->room}}">
             </div>
-             <div>
+             <div style="padding: 15px;">
                 <label>Doctor name</label>
                 <input  style="color: black;" type="text" name="name" value="{{$data->name}}">
             </div>
