@@ -53,6 +53,11 @@ return redirect()->back()->with('message', 'Doctor Added successfully');
        return redirect()->back();
        
    }
+public function updatedoctor(){
 
+
+return view('admin.update_doctor');
+    
+}
 
 }
