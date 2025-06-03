@@ -72,7 +72,7 @@ $imagename=time().'.'.$image->getClientOriginalExtension() ;
 $request->file->move('doctorimage',$imagename);
 $doctor->image=$imagename ; }
     $doctor->save();
-        return redirect->back();
+        return redirect()->back();
         
     }
 
