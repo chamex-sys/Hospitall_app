@@ -39,6 +39,12 @@
         <!-- partial -->
      <div class="container-fluid page-body-wrapper">
      <div class="container" align="center" style="padding: 100px;">
+           @if(session()->has('message'))
+    <div class="alert alert-success alert-dismissible fade show d-flex justify-content-between align-items-center" role="alert">
+        <span>{{ session()->get('message') }}</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
          <form action="{{url('editdoctor' , $data->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
              <div style="padding: 15px;">
