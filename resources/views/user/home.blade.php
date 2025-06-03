@@ -41,7 +41,7 @@
                 <div class="site-info">
                   <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
                   <span class="divider">|</span>
-                  <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
+                  <a href="#"><span class="mai-mail text-primary"></span> onehealth@gmail.com</a>
                 </div>
               </div>
               <div class="col-sm-4 text-right text-sm">
@@ -58,7 +58,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
           <div class="container">
-            <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+            <a class="navbar-brand" href="#a"><span class="text-primary">One</span>-Health</a>
 
             <form action="#">
               <div class="input-group input-navbar">
@@ -83,9 +83,6 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="doctors.html">Doctors</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="blog.html">News</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact</a>
@@ -131,10 +128,10 @@
 
       <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
         <div class="hero-section">
-          <div class="container text-center wow zoomIn">
+          <div class="container text-center wow zoomIn" id="a">
             <span class="subhead">Let's make your life happier</span>
             <h1 class="display-4">Healthy Living</h1>
-            <a href="#" class="btn btn-primary">Let's Consult</a>
+            <a href="#app" class="btn btn-primary">Let's Consult</a>
           </div>
         </div>
       </div>
@@ -193,10 +190,10 @@
   
 @include('user.latest')
 <!-- .page-section -->
-
+<div id="app">
 @include('user.appointment')
       <!-- .page-section -->
-
+</div>
      <!-- .banner-home -->
 
       <footer class="page-footer">
