@@ -39,7 +39,9 @@
             <th style="padding:10px;">Phone</th>
             <th style="padding:10px;">Speciality</th>
             <th style="padding:10px;">Room No</th>
-            <th style="padding:10px;">Image</th>                                                       
+            <th style="padding:10px;">Image</th> 
+            <th style="padding:10px;">Delete</th> 
+            <th style="padding:10px;">Update</th> 
         </tr>
         @foreach($data as $doctor)
         <tr align="center" style="background-color:thistle; font-size:; color:black;   ">
@@ -48,6 +50,8 @@
           <td>{{$doctor->speciality}}</td>
           <td>{{$doctor->room}}</td>
           <td><img width="100"  height="100" src="doctorimage/{{$doctor->image}}" alt=""></td>
+            <td><a class="btn btn-danger" href="">Delete</a></td>
+            <td><a class="btn btn-primary" href="">Update</a></td>
         </tr>
         @endforeach
       
