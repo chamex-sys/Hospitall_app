@@ -1,4 +1,3 @@
-[media pointer="file-service://file-2YaNvEoh57TGFf7mrJyyff"]
 
 <x-guest-layout>
     <x-authentication-card>
