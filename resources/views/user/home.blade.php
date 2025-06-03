@@ -82,10 +82,13 @@
                   <a class="nav-link" href="\html\about.html" >About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="doctors.html">Doctors</a>
+                  <a class="nav-link" href="\html\doctors.html">Doctors</a>
+                </li>  
+                  <li class="nav-item">
+                  <a class="nav-link" href="\html\blog.html">News</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                  <a class="nav-link" href="\html\contact.html">Contact</a>
                 </li>
                
                 @if (Route::has('login'))
