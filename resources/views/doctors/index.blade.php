@@ -7,7 +7,7 @@
         <h3>{{ $doctor->name }}</h3>
         <p>Spécialité: {{ $doctor->speciality }}</p>
         <p>Chambre: {{ $doctor->room }}</p>
-        <p>Chambre: {{ $doctor->image }}</p>
+     <img width="100"  height="100" src="doctorimage/{{$doctor->image}}" alt="">
         <a href="{{ route('doctors.calendar', $doctor->id) }}">📅 Voir le calendrier</a>
     </div>
 @endforeach
