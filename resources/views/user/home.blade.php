@@ -41,7 +41,7 @@
                 <div class="site-info">
                   <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
                   <span class="divider">|</span>
-                  <a href="#"><span class="mai-mail text-primary"></span> onehealth@gmail.com</a>
+                  <a href="#"><span class="mai-mail text-primary"></span> ffffuckkkkk</a>
                 </div>
               </div>
               <div class="col-sm-4 text-right text-sm">
