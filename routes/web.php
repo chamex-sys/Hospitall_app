@@ -31,6 +31,7 @@ Route::get('/about', function () { return view('about');});
 Route::get('/about', function () { return view('blog');});
 Route::get('/about', function () { return view('contact');});
 Route::get('/about', function () { return view('doctors');});
+Route::get('/menu', function () { return view('menu'); });
 
 
 
