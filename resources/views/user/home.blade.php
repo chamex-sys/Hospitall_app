@@ -149,7 +149,7 @@
                   <div class="circle-shape bg-secondary text-white">
                     <span class="mai-chatbubbles-outline"></span>
                   </div>
-                  <a href="{{ route('symptoms.form') }}"><p><span>Describe</span> your symptomes </p> </a>
+                  <a href=""><p><span>Describe</span> your symptomes </p> </a>
                 </div>
               </div>
               <div class="col-md-4 py-3 py-md-0">
