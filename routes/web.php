@@ -38,8 +38,8 @@ Route::get('/patient/symptoms', function () {
 })->name('symptoms.form');
 
 Route::post('/suggest-doctor', [HomeController::class, 'suggest'])->name('suggest.doctor');
-Route::get('/doctors', [HomeController::class, 'index'])->name('doctors.index');
-Route::get('/doctors/{id}/calendar', [HomeController::class, 'calendar'])->name('doctors.calendar');
+Route::get('/doctors', [DoctorController::class, 'index'])->name('doctors.index');
+Route::get('/doctors/{id}/calendar', [DoctorController::class, 'calendar'])->name('doctors.calendar');
 
 
 
