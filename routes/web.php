@@ -33,7 +33,11 @@ Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);
 // Route::get('/doctors', function () { return view('doctors');});
 // Route::get('/menu', function () { return view('menu'); });
 
-Route::get('/about', [HomeController::class, 'about']);
+Route::get('/patient/symptoms', function () {
+    return view('patient.symptoms');
+})->name('symptoms.form');
+
+Route::post('/suggest-doctor', [HomeController::class, 'suggest'])->name('suggest.doctor');
 
 
 
