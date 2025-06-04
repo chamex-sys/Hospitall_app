@@ -33,9 +33,8 @@ Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);
 // Route::get('/doctors', function () { return view('doctors');});
 // Route::get('/menu', function () { return view('menu'); });
 
-Route::get('/header', function () {
-    return view('user.header');
-});
+Route::get('/about', [HomeController::class, 'about']);
+
 
 
 
