@@ -6,7 +6,7 @@
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
     @foreach ($doctors as $doctor)
         <div style="flex: 0 0 calc(33.33% - 40px); max-width: calc(33.33% - 40px); border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; overflow: hidden; text-align: center; background-color: #f9f9f9;">
-            <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 90%; height: 200px; object-fit: cover;">
+            <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 70%; height: 500px; object-fit: cover;">
             <div style="padding: 10px;">
                 <h3 style="margin: 10px 0;">{{ $doctor->name }}</h3>
                 <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
