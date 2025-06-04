@@ -79,7 +79,7 @@
                   <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="\html\about.html" >About Us</a>
+                  <a class="nav-link" href="{{url('about')}}" >About Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="\html\doctors.html">Doctors</a>
