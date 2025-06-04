@@ -69,30 +69,28 @@
           <div class="collapse navbar-collapse" id="navbarSupport">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('/about') }}" >About Us</a>
+                  <a class="nav-link" href="\html\about.html" >About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('/doctors') }}">Doctors</a>
+                  <a class="nav-link" href="\html\doctors.html">Doctors</a>
                 </li>  
                   <li class="nav-item">
-                  <a class="nav-link" href="{{ url('/blog') }}l">News</a>
+                  <a class="nav-link" href="\html\blog.html">News</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+                  <a class="nav-link" href="\html\contact.html">Contact</a>
                 </li>
-               
-                @if (Route::has('login'))
-                @auth 
+            
                  <li class="nav-item">
                   <a class="nav-link" href="{{url('myappointment')}}" style="background-color:greenyellow;color:white;">My Appointments</a>
                 </li>
         
                 <x-app-layout></x-app-layout>
 
-                @else 
+                
                 <li class="nav-item">
                   <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login </a>
                 </li>
@@ -100,8 +98,7 @@
                   <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
                 </li>
 
-@endauth
-@endif
+
 
               </ul>
         </div> <!-- .navbar-collapse -->
@@ -114,7 +111,7 @@
       <div class="container text-center wow fadeInUp">
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">About</li>
           </ol>
         </nav>
@@ -131,7 +128,7 @@
             <div class="circle-shape bg-secondary text-white">
               <span class="mai-chatbubbles-outline"></span>
             </div>
-            <p><span>Chat</span> with a doctors</p>
+            <p><span>Describe</span>  your symptomes</p>
           </div>
         </div>
         <div class="col-md-4 py-3 wow zoomIn">
@@ -139,7 +136,7 @@
             <div class="circle-shape bg-primary text-white">
               <span class="mai-shield-checkmark"></span>
             </div>
-            <p><span>One</span>-Health Protection</p>
+            <p><span>See</span>available doctors</p>
           </div>
         </div>
         <div class="col-md-4 py-3 wow zoomIn">
@@ -147,7 +144,7 @@
             <div class="circle-shape bg-accent text-white">
               <span class="mai-basket"></span>
             </div>
-            <p><span>One</span>-Health Pharmacy</p>
+            <p><span>MY</span>Appointments</p>
           </div>
         </div>
       </div>
@@ -227,11 +224,7 @@
             <img src="../assets/img/mobile_app.png" alt="">
           </div>
         </div>
-        <div class="col-lg-8 wow fadeInRight">
-          <h1 class="font-weight-normal mb-3">Get easy access of all features using One Health Application</h1>
-          <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
-          <a href="#" class="ml-2"><img src="../assets/img/app_store.svg" alt=""></a>
-        </div>
+       
       </div>
     </div>
   </div> <!-- .banner-home -->
