@@ -27,11 +27,11 @@ Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
 Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 Route::get('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);
-Route::get('/about', function () { return view('about');});
-Route::get('/blog', function () { return view('blog');});
-Route::get('/contact', function () { return view('contact');});
-Route::get('/doctors', function () { return view('doctors');});
-Route::get('/menu', function () { return view('menu'); });
+// Route::get('/about', function () { return view('about');});
+// Route::get('/blog', function () { return view('blog');});
+// Route::get('/contact', function () { return view('contact');});
+// Route::get('/doctors', function () { return view('doctors');});
+// Route::get('/menu', function () { return view('menu'); });
 
 Route::get('/header', function () {
     return view('user.header');
