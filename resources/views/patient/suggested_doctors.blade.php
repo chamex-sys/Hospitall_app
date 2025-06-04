@@ -1,25 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h2>suggested doctors</h2>
+<div class="container mt-4">
+    <h2 class="mb-4">
+        @if ($speciality)
+            Médecins spécialisés en : <strong>{{ ucfirst($speciality) }}</strong>
+        @else
+            Aucun médecin trouvé pour vos symptômes.
+        @endif
+    </h2>
 
-    @if($doctors->isEmpty())
+    @if ($doctors->isEmpty())
         <div class="alert alert-warning">
-            No doctor is suggested for these symptoms .
+            Désolé, aucun médecin ne correspond à vos symptômes.
         </div>
     @else
-        <p><strong>Detected Speciality :</strong> {{ ucfirst($speciality) }}</p>
-        <ul class="list-group">
-            @foreach($doctors as $doctor)
-                <li class="list-group-item">
-                    <strong>{{ $doctor->name }}</strong> - Chambre {{ $doctor->room }}
-                    <br>
-                    Spécialité : {{ $doctor->speciality }}
-                </li>
+        <div class="row">
+            @foreach ($doctors as $doctor)
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        @if ($doctor->photo)
+                            <img src="{{ asset('storage/' . $doctor->photo) }}" class="card-img-top" alt="Photo de {{ $doctor->name }}">
+                        @else
+                            <img src="{{ asset('images/default-doctor.png') }}" class="card-img-top" alt="Photo par défaut">
+                        @endif
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $doctor->name }}</h5>
+                            <p class="card-text">
+                                <strong>Spécialité :</strong> {{ ucfirst($doctor->speciality) }} <br>
+                                <strong>Salle :</strong> {{ $doctor->room }} <br>
+                                <strong>Email :</strong> {{ $doctor->email }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             @endforeach
-        </ul>
+        </div>
     @endif
 </div>
 @endsection
-
