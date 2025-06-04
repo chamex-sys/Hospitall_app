@@ -79,16 +79,16 @@
                   <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('about')}}" >About Us</a>
+                  <a class="nav-link" href="\html\about.html" >About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="">Doctors</a>
+                  <a class="nav-link" href="\html\doctors.html">Doctors</a>
                 </li>  
                   <li class="nav-item">
-                  <a class="nav-link" href="">News</a>
+                  <a class="nav-link" href="\html\blog.html">News</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="">Contact</a>
+                  <a class="nav-link" href="\html\contact.html">Contact</a>
                 </li>
                
                 @if (Route::has('login'))
