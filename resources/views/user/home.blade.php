@@ -41,7 +41,7 @@
                 <div class="site-info">
                   <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
                   <span class="divider">|</span>
-                  <a href="#"><span class="mai-mail text-primary"></span> ffffuckkkkk</a>
+                  <a href="#"><span class="mai-mail text-primary"></span>onehealth@gmail.com</a>
                 </div>
               </div>
               <div class="col-sm-4 text-right text-sm">
@@ -82,13 +82,13 @@
                   <a class="nav-link" href="{{url('about')}}" >About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="\html\doctors.html">Doctors</a>
+                  <a class="nav-link" href="">Doctors</a>
                 </li>  
                   <li class="nav-item">
-                  <a class="nav-link" href="\html\blog.html">News</a>
+                  <a class="nav-link" href="">News</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="\html\contact.html">Contact</a>
+                  <a class="nav-link" href="">Contact</a>
                 </li>
                
                 @if (Route::has('login'))
