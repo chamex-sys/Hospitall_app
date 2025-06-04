@@ -60,8 +60,8 @@ return redirect()->back()->with('message','Appointment Request successful , we w
         return redirect()->back();
 
     }
-}
+
 public function about() {
     return view('user.about');
 }
-
+}
