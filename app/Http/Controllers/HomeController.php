@@ -61,3 +61,7 @@ return redirect()->back()->with('message','Appointment Request successful , we w
 
     }
 }
+public function about() {
+    return view('user.about');
+}
+
