@@ -157,7 +157,7 @@
                   <div class="circle-shape bg-primary text-white">
                     <span class="mai-shield-checkmark"></span>
                   </div>
-                  <p><span>See</span> available doctors</p>
+                  <a href="/doctors"><p><span>See</span> available doctors</p></a>
                 </div>
               </div>
               <div class="col-md-4 py-3 py-md-0">
