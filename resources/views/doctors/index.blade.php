@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 style="text-align: center;">Liste des Docteurs</h1>
+<h1 style="text-align: center;">Doctors List</h1>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
     @foreach ($doctors as $doctor)
@@ -9,10 +9,10 @@
             <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 190px; height: 250px; object-fit: cover; margin-top: 10px;">
             <div style="padding: 10px;">
                 <h3 style="margin: 10px 0;">{{ $doctor->name }}</h3>
-                <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
-                <p><strong>Chambre :</strong> {{ $doctor->room }}</p>
+                <p><strong>Speciality :</strong> {{ $doctor->speciality }}</p>
+                <p><strong>Room :</strong> {{ $doctor->room }}</p>
                 <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
-                    📅 Voir le calendrier
+                    📅 See calendar
                 </a>
             </div>
         </div>
