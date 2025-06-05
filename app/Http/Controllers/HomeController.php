@@ -61,42 +61,5 @@ return redirect()->back()->with('message','Appointment Request successful , we w
 
     }
 
-public function about() {
-    return view('user.about');
-}
-    public function suggest(Request $request)
-    {
-        $symptoms = strtolower($request->input('symptoms'));
 
-        // Simple matching avec la spécialité
-        $specialities = [
-            'eye' => ['vue', 'yeux', 'flou', 'vision'],
-            'heart' => ['coeur', 'palpitations', 'douleur thoracique'],
-            'bones' => ['os', 'fracture', 'douleur articulations'],
-            'nose' => ['nez', 'rhume', 'sinus'],
-            'skin' => ['peau', 'allergie', 'démangeaison'],
-        ];
-
-        $matchedSpeciality = null;
-
-        foreach ($specialities as $key => $keywords) {
-            foreach ($keywords as $word) {
-                if (str_contains($symptoms, $word)) {
-                    $matchedSpeciality = $key;
-                    break 2;
-                }
-            }
-        }
-
-        if ($matchedSpeciality) {
-            $doctors = Doctor::where('speciality', $matchedSpeciality)->get();
-        } else {
-            $doctors = collect(); // Empty
-        }
-
-        return view('patient.suggested_doctors', [
-            'doctors' => $doctors,
-            'speciality' => $matchedSpeciality
-        ]);
-    }
 }
