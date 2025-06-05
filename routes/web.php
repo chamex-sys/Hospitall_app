@@ -29,19 +29,10 @@ Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
 Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 Route::get('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);
-// Route::get('/about', function () { return view('about');});
-// Route::get('/blog', function () { return view('blog');});
-// Route::get('/contact', function () { return view('contact');});
-// Route::get('/doctors', function () { return view('doctors');});
-// Route::get('/menu', function () { return view('menu'); });
-
-Route::get('/patient/symptoms', function () {
-    return view('patient.symptoms');
-})->name('symptoms.form');
-
-Route::post('/suggest-doctor', [HomeController::class, 'suggest'])->name('suggest.doctor');
 Route::get('/doctors', [DoctorController::class, 'index'])->name('doctors.index');
 Route::get('/doctors/{id}/calendar', [DoctorController::class, 'calendar'])->name('doctors.calendar');
+Route::get('/symptoms', [App\Http\Controllers\SymptomController::class, 'form']);
+Route::post('/symptoms', [App\Http\Controllers\SymptomController::class, 'analyze']);
 
 
 
