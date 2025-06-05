@@ -43,7 +43,7 @@ return redirect()->back()->with('message', 'Doctor Added successfully');
 
  } 
  public function showdoctor(){
-  $data = doctor :: all();
+  $doctor = doctor :: all();
    return view('admin.showdoctor', compact('doctor'));
  }
     
