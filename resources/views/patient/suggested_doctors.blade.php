@@ -118,6 +118,9 @@
     position: relative;
     text-align: center;
 }
+.navbar .container {
+    max-width: 900px; /* ou moins : 800px, 750px selon ce que tu veux */
+}
 
 .hero-section .subhead {
     font-size: 20px;
