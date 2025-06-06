@@ -100,7 +100,7 @@
     </div>
 </div>
 
-@include('user.doctor')
-@include('user.latest')
+<!-- @include('user.doctor')
+@include('user.latest') -->
 
 @endsection
