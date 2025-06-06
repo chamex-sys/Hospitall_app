@@ -1,5 +1,6 @@
 
 
+
       <link rel="stylesheet" href="../assets/css/maicons.css">
 
 
@@ -332,139 +333,54 @@ hr {
 <h1 style="text-align: center;">Doctors List</h1>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+   <h1 style="text-align: center;">Doctors List</h1>
+
 <div style="position: relative; padding: 20px;">
 
+  <!-- Flèche gauche -->
+  <button id="scrollLeft" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
 
+  <!-- Conteneur scrollable -->
+  <div id="doctorCarousel" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 10px 50px;">
 
- <style>
-    .carousel-wrapper {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        max-width: 1000px;
-        margin: auto;
-    }
-
-    .carousel-track {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        scroll-behavior: smooth;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none;  /* IE 10+ */
-    }
-
-    .carousel-track::-webkit-scrollbar {
-        display: none;
-    }
-
-    .doctor-card {
-        flex: 0 0 33.3333%;
-        scroll-snap-align: start;
-        box-sizing: border-box;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .doctor-card img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 10px;
-        border: 3px solid #00B38F;
-    }
-
-    .doctor-card h4 {
-        margin: 0.5rem 0 0.2rem;
-    }
-
-    .doctor-card p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #666;
-    }
-
-    .arrow-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #00B38F;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        padding: 0.2rem 0.7rem;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 10;
-    }
-
-    .arrow-left {
-        left: 10px;
-    }
-
-    .arrow-right {
-        right: 10px;
-    }
-
-    @media (max-width: 768px) {
-        .doctor-card {
-            flex: 0 0 100%;
-        }
-    }
-</style>
-
-<div class="carousel-wrapper">
-    <button class="arrow-btn arrow-left" onclick="scrollDoctors(-1)">&#10094;</button>
-    <button class="arrow-btn arrow-right" onclick="scrollDoctors(1)">&#10095;</button>
-
-    <div id="doctorCarousel" class="carousel-track">
-        @foreach($doctors as $doctor)
-            <div class="doctor-card">
-                <img src="{{ $doctor->photo ?? 'https://via.placeholder.com/120' }}" alt="Photo de {{ $doctor->name }}">
-                <h4>{{ $doctor->name }}</h4>
-                <p>{{ $doctor->speciality }}</p>
+    @foreach ($doctors as $doctor)
+        <div style="min-width: 220px; flex-shrink: 0; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; overflow: hidden; text-align: center; background-color: #f9f9f9;">
+            <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 190px; height: 250px; object-fit: cover; margin-top: 10px;">
+            <div style="padding: 10px;">
+                <h3 style="margin: 10px 0;">{{ $doctor->name }}</h3>
+                <p><strong>Speciality :</strong> {{ $doctor->speciality }}</p>
+                <p><strong>Room :</strong> {{ $doctor->room }}</p>
+                <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
+                    📅 See calendar
+                </a>
             </div>
-        @endforeach
-    </div>
-</div>
-
-<script>
-    const carousel = document.getElementById('doctorCarousel');
-    const doctorWidth = carousel.offsetWidth / 3;
-
-    function scrollDoctors(direction) {
-        carousel.scrollBy({
-            left: doctorWidth * direction,
-            behavior: 'smooth'
-        });
-    }
-</script>
-
-
-   
         </div>
-    </div>
-</div>
-
-  
-</div>
-
-<!-- Script JavaScript -->
-
-
-
-  
-
-
+    @endforeach
 
   </div>
 
   <!-- Flèche droite -->
+  <button id="scrollRight" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
 </div>
 
+<!-- Script JS pour gérer le scroll -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('doctorCarousel');
+    const scrollAmount = 240; // pixels
 
+    document.getElementById('scrollLeft').addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    document.getElementById('scrollRight').addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  });
+</script>
+
+
+</div>
 
 <footer class="page-footer">
     <div class="container">
@@ -534,3 +450,9 @@ hr {
 
 
 @endsection
+
+
+
+
+
+
