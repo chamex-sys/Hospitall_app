@@ -3,74 +3,89 @@
 @section('content')
 
 <style>
-    .page-hero {
-/*         background-color: #00D1A0;*/
-        color: white; 
-        padding: 100px 0;
-        background-blend-mode: overlay;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .hero-section .subhead {
-        font-size: 20px;
-        color: white;
-        font-weight: 300;
-    }
-
-    .hero-section h1 {
-        font-size: 48px;
-        font-weight: 700;
-        margin-top: 20px;
-    }
-
-    .btn-primary {
-        background-color: #00D1A0;
-        border-color: #00B38F;
-        font-weight: bold;
-    }
-
-    .btn-primary:hover {
-        background-color: #00B38F;
-        border-color: #00A481;
-    }
-
-    .form-control {
-        border-radius: 8px;
-        padding: 15px;
-        font-size: 16px;
-        border: 1px solid #ced4da;
-    }
-
-    .alert-success {
-        background-color: #d1f7ed;
-        border-color: #b5f0e0;
-        color: #1f705e;
-    }
-
-    .page-section {
-        padding: 60px 0;
-    }
-
-    h1.text-center {
-        color: #00D1A0;
-        font-weight: 600;
-        margin-bottom: 40px;
-    }
-
-    #symptoms {
-        min-height: 180px;
-        resize: vertical;
-    }
-    .page-footer {
-    background-color: #e9ecef;
-    padding: 20px 0;
-    margin-top: 40px;
-    text-align: center;
-    font-size: 14px;
-    color: #6c757d;
-    border-top: 1px solid #dee2e6;
+.page-hero {
+    background-color: rgba(0, 0, 0, 0.6); /* couche sombre */
+    position: relative;
+    color: white;
+    padding: 100px 0;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.hero-section .subhead {
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+    writing-mode: vertical-rl; /* texte vertical */
+    transform: rotate(180deg); /* pour que le texte soit lisible de bas en haut */
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* fond sombre semi-transparent */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #00D1A0;
+    border-color: #00B38F;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 15px 30px;
+}
+
+.btn-primary:hover {
+    background-color: #00B38F;
+    border-color: #00A481;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+}
+
+.page-section {
+    padding: 60px 0;
+}
+
+h1.text-center {
+    color: #00D1A0;
+    font-weight: 900; /* plus solide */
+    margin-bottom: 40px;
+    font-size: 56px; /* plus grand */
+    text-align: center;
+}
+
+#symptoms {
+    min-height: 250px; /* élargi en hauteur */
+    width: 100%; /* occupe toute la largeur disponible */
+    max-width: 800px; /* limite max largeur */
+    resize: vertical;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 18px;
+}
+
 .page-footer {
     background-color: #1e2d2f;
     color: #d3d3d3;
@@ -161,35 +176,11 @@ hr {
     text-decoration: none;
 }
 
-/* Rendre le background sombre pour le header */
-.page-hero {
-    background-color: rgba(0, 0, 0, 0.6); /* couche sombre */
-    position: relative;
-}
-
 /* Centrer le formulaire de saisie */
 #app form .row {
     justify-content: center;
     text-align: center;
     width: 100% ;
-}
-
-/* Centrer l'input (textarea) */
-#symptoms {
-    min-height: 180px;
-    resize: vertical;
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Styliser le titre 'Describe your symptoms' */
-.hero-section h1 {
-    background-color: rgba(0, 0, 0, 0.5); /* fond sombre semi-transparent */
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
 }
 
 /* Centrer le bouton 'Envoyer' proprement */
@@ -202,11 +193,29 @@ form .text-center {
     .hero-section h1 {
         font-size: 32px;
         padding: 8px 16px;
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+    .hero-section .subhead {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-bottom: 10px;
     }
     .btn-primary {
         width: 100%;
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 10px 0;
     }
-}
+    h1.text-center {
+        font-size: 40px;
+    }
+    #symptoms {
+        max-width: 100%;
+    }
+
+
+
 
 
 </style>
