@@ -332,41 +332,30 @@ hr {
 <h1 style="text-align: center;">Doctors List</h1>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
-
 <div style="position: relative; padding: 20px;">
 
   <!-- Flèche gauche -->
   <button id="scrollLeft" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
 
-  <!-- Conteneur scrollable -->
+  <!-- Carousel -->
   <div id="doctorCarousel" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 10px 50px;">
+      @foreach ($doctors as $doctor)
+          <div style="min-width: 280px; max-width: 280px; flex-shrink: 0; margin: 0 10px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; background-color: #f9f9f9;">
+              <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+              <div style="padding: 10px; text-align: center;">
+                  <h3>{{ $doctor->name }}</h3>
+                  <p><strong>Speciality:</strong> {{ $doctor->speciality }}</p>
+                  <p><strong>Room:</strong> {{ $doctor->room }}</p>
+                  <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
+                      📅 See calendar
+                  </a>
+              </div>
+          </div>
+      @endforeach
+  </div>
 
-
-
-    <!-- Flèche gauche -->
-
-    <!-- Fenêtre visible du carousel -->
-    <div style="overflow: hidden; width: 100%;">
-        <div id="doctorCarousel" style="display: flex; transition: transform 0.5s ease-in-out;">
-            @foreach ($doctors as $doctor)
-                <div style="min-width: 280px; max-width: 280px; flex-shrink: 0; margin: 0 10px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; background-color: #f9f9f9;">
-                    <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                    <div style="padding: 10px; text-align: center;">
-                        <h3>{{ $doctor->name }}</h3>
-                        <p><strong>Speciality:</strong> {{ $doctor->speciality }}</p>
-                        <p><strong>Room:</strong> {{ $doctor->room }}</p>
-                        <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
-                            📅 See calendar
-                        </a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-
-    <!-- Flèche droite -->
-    <button id="scrollRight" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
-
+  <!-- Flèche droite -->
+  <button id="scrollRight" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
 </div>
 
 <!-- Script JavaScript -->
