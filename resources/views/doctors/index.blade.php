@@ -333,122 +333,117 @@ hr {
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
 <div style="position: relative; padding: 20px;">
-<style>
-    .carousel-container {
+
+
+
+ <style>
+    .carousel-wrapper {
         position: relative;
         overflow: hidden;
         width: 100%;
+        max-width: 1000px;
+        margin: auto;
     }
 
     .carousel-track {
         display: flex;
         transition: transform 0.5s ease-in-out;
-        width: 300%;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE 10+ */
     }
 
-    .carousel-slide {
-        flex: 0 0 100%;
-        display: flex;
-        justify-content: space-around;
-        gap: 1rem;
+    .carousel-track::-webkit-scrollbar {
+        display: none;
     }
 
     .doctor-card {
-        flex: 1 1 calc(33.333% - 1rem);
-        border: 1px solid #ccc;
+        flex: 0 0 33.3333%;
+        scroll-snap-align: start;
+        box-sizing: border-box;
         padding: 1rem;
-        border-radius: 10px;
-        background-color: #f9f9f9;
         text-align: center;
     }
 
-    .nav-btn {
+    .doctor-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: 3px solid #00B38F;
+    }
+
+    .doctor-card h4 {
+        margin: 0.5rem 0 0.2rem;
+    }
+
+    .doctor-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    .arrow-btn {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 2rem;
-        background: none;
+        background-color: #00B38F;
         border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 0.2rem 0.7rem;
+        border-radius: 50%;
         cursor: pointer;
         z-index: 10;
     }
 
-    .nav-left {
-        left: 0;
+    .arrow-left {
+        left: 10px;
     }
 
-    .nav-right {
-        right: 0;
+    .arrow-right {
+        right: 10px;
     }
 
-    input[name="carousel"] {
-        display: none;
-    }
-
-    #slide1:checked ~ .carousel-track {
-        transform: translateX(0%);
-    }
-
-    #slide2:checked ~ .carousel-track {
-        transform: translateX(-100%);
-    }
-
-    #slide3:checked ~ .carousel-track {
-        transform: translateX(-200%);
-    }
-
-    /* Responsive (1 per slide on mobile) */
     @media (max-width: 768px) {
-        .carousel-slide {
-            flex-direction: column;
-            align-items: center;
-        }
-
         .doctor-card {
-            flex: 1 1 90%;
+            flex: 0 0 100%;
         }
     }
 </style>
 
-<div class="carousel-container">
-    <!-- Radio buttons for navigation -->
-    <input type="radio" name="carousel" id="slide1" checked>
-    <input type="radio" name="carousel" id="slide2">
-    <input type="radio" name="carousel" id="slide3">
+<div class="carousel-wrapper">
+    <button class="arrow-btn arrow-left" onclick="scrollDoctors(-1)">&#10094;</button>
+    <button class="arrow-btn arrow-right" onclick="scrollDoctors(1)">&#10095;</button>
 
-    <!-- Navigation buttons -->
-    <label for="slide1" class="nav-btn nav-left">&#9664;</label>
-    <label for="slide2" class="nav-btn nav-right">&#9654;</label>
+    <div id="doctorCarousel" class="carousel-track">
+        @foreach($doctors as $doctor)
+            <div class="doctor-card">
+                <img src="{{ $doctor->photo ?? 'https://via.placeholder.com/120' }}" alt="Photo de {{ $doctor->name }}">
+                <h4>{{ $doctor->name }}</h4>
+                <p>{{ $doctor->speciality }}</p>
+            </div>
+        @endforeach
+    </div>
+</div>
 
-    <div class="carousel-track">
-        <!-- Slide 1 -->
-        <div class="carousel-slide">
-            @foreach($doctors->slice(0, 3) as $doctor)
-                <div class="doctor-card">
-                    <h4>{{ $doctor->name }}</h4>
-                    <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
-                </div>
-            @endforeach
-        </div>
+<script>
+    const carousel = document.getElementById('doctorCarousel');
+    const doctorWidth = carousel.offsetWidth / 3;
 
-        <!-- Slide 2 -->
-        <div class="carousel-slide">
-            @foreach($doctors->slice(3, 3) as $doctor)
-                <div class="doctor-card">
-                    <h4>{{ $doctor->name }}</h4>
-                    <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
-                </div>
-            @endforeach
-        </div>
+    function scrollDoctors(direction) {
+        carousel.scrollBy({
+            left: doctorWidth * direction,
+            behavior: 'smooth'
+        });
+    }
+</script>
 
-        <!-- Slide 3 -->
-        <div class="carousel-slide">
-            @foreach($doctors->slice(6, 3) as $doctor)
-                <div class="doctor-card">
-                    <h4>{{ $doctor->name }}</h4>
-                    <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
-                </div>
-            @endforeach
+
+   
         </div>
     </div>
 </div>
