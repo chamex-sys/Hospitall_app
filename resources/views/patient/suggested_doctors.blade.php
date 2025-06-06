@@ -41,10 +41,13 @@
 
     .card img {
         width: 250px;
-        height: 350px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 15px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;            /* ✅ permet le centrage */
+    margin-left: auto;         /* ✅ centrage horizontal */
+    margin-right: auto;        /* ✅ centrage horizontal */
     }
 
     .card p {
