@@ -1,4 +1,3 @@
-modifeir le code suivant pour que plus de style ( le input au centre de pas , le background de texte describe you symptoms doit etre sombre un peu ..... completer le style :
 @extends('layouts.app')
 
 @section('content')
@@ -172,6 +171,7 @@ hr {
 #app form .row {
     justify-content: center;
     text-align: center;
+    width: 100% ;
 }
 
 /* Centrer l'input (textarea) */
