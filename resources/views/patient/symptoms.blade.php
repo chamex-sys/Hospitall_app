@@ -6,12 +6,12 @@
 
 .hero-section a.btn-primary {
     display: block;
-    margin-top: 30px; /* ou comme tu veux */
-    width: 200px ;
-     position: relative;
+    margin: 30px auto 0 auto; /* 30px en haut, auto à gauche et droite */
+    width: 200px;
+    position: relative;
     text-align: center;
-    justify-content: center;
 }
+
 
  
 .page-hero {
