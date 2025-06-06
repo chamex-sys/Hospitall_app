@@ -1,9 +1,9 @@
 
 
 
-      <link rel="stylesheet" href="../assets/css/maicons.css">
-
-
+  
+@extends('layouts.app')
+ <link rel="stylesheet" href="../assets/css/maicons.css">
 
       <link rel="stylesheet" href="../assets/css/bootstrap.css">
 
@@ -15,7 +15,10 @@
       
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
- <header>
+
+@section('content')
+     
+     <header>
         <div class="topbar">
           <div class="container">
             <div class="row">
@@ -51,7 +54,7 @@
               </div>
             </form>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-l
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false"
               <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -97,6 +100,12 @@
           </div> <!-- .container -->
         </nav>
       </header>
+
+
+
+
+
+
 
 <div class="page-hero bg-image overlay-dark" style="background-image: url('{{ asset('assets/img/bg_image_1.jpg') }}');">
     <div class="hero-section text-center">
