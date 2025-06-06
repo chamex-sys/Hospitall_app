@@ -139,7 +139,7 @@
     font-size: 48px;
     font-weight: 700;
     margin-top: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* fond sombre semi-transparent */
+ 
     display: inline-block;
     padding: 10px 20px;
     border-radius: 10px;
