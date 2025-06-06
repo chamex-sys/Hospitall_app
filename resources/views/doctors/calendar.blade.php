@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
 <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
 <link rel="stylesheet" href="../assets/css/theme.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
@@ -77,10 +78,10 @@
                             <x-app-layout></x-app-layout>
                         @else
                             <li class="nav-item">
-                                <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login</a>
+                                <a class="btn btn-login" href="{{route('login')}}">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
+                                <a class="btn btn-register" href="{{route('register')}}">Register</a>
                             </li>
                         @endauth
                     @endif
@@ -91,11 +92,13 @@
 </header>
 
 <div class="page-hero bg-image overlay-dark" style="background-image: url('{{ asset('assets/img/bg_image_1.jpg') }}');">
-    <div class="hero-section text-center">
-        <div class="container wow zoomIn">
-            <span class="subhead">See when your favorite doctor is available!</span>
-            <h1 class="display-4">Pick you day</h1>
-            <a href="#calendar-section" class="btn btn-primary mt-4 d-block">Let's Consult</a>
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-text">
+                <div class="subhead-text">SEE WHEN YOUR FAVORITE DOCTOR IS AVAILABLE!</div>
+                <h1 class="display-4">Pick you day</h1>
+                <a href="#calendar-section" class="btn btn-consult">Let's Consult</a>
+            </div>
         </div>
     </div>
 </div>
@@ -201,103 +204,214 @@
 </footer>
 
 <style>
-.hero-section a.btn-primary {
-    display: block;
-    margin: 30px auto 0 auto;
-    width: 200px;
-    position: relative;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-.page-hero {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    padding: 100px 0;
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    text-align: center;
+body {
+    line-height: 1.5;
 }
 
-.hero-section .subhead {
-    font-size: 20px;
-    color: white;
-    font-weight: 300;
-    display: block;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
+/* Topbar */
+.topbar {
+    background-color: #fff;
+    padding: 5px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.hero-section h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-top: 0;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.topbar .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.btn-primary {
-    background-color: #00D1A0 !important;
-    border-color: #00B38F !important;
-    color: white !important;
-    font-weight: bold;
+.site-info {
+    display: flex;
+    align-items: center;
+}
+
+.site-info a {
+    color: #555;
+    text-decoration: none;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.site-info a .mai-call,
+.site-info a .mai-mail {
+    color: #00D1A0;
+    margin-right: 5px;
+}
+
+.site-info .divider {
+    color: #ddd;
+    margin: 0 10px;
+}
+
+.social-mini-button {
+    display: flex;
+}
+
+.social-mini-button a {
+    color: #555;
+    margin-left: 15px;
     font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 5px;
+}
+
+/* Navbar */
+.navbar {
+    padding: 10px 0;
+    background-color: #fff;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar-brand .text-primary {
+    color: #00D1A0 !important;
+}
+
+.input-group.input-navbar {
+    width: 280px;
+    margin: 0 20px;
+}
+
+.input-navbar .form-control {
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.input-navbar .input-group-text {
+    background-color: transparent;
+    border-right: none;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.nav-link {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
+.nav-link:hover {
+    color: #00D1A0;
+}
+
+.btn-login, 
+.btn-register {
+    background-color: #00D1A0;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 500;
     text-decoration: none;
     display: inline-block;
     margin-left: 10px;
     transition: background-color 0.3s;
 }
 
-.btn-primary:hover {
-    background-color: #00B38F !important;
-    border-color: #00A481 !important;
-    color: white !important;
+.btn-login:hover, 
+.btn-register:hover {
+    background-color: #00b38f;
+    color: white;
 }
 
-.page-section {
-    padding: 60px 0;
+/* Hero Section */
+.page-hero {
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    margin-top: 0;
+    padding: 0;
 }
 
-.page-section h1.text-center {
-    color: #00D1A0;
-    font-weight: 900;
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-#symptoms {
+.hero-section {
     width: 100%;
-    max-width: 700px;
-    min-height: 220px;
-    resize: vertical;
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 20px;
-    font-size: 18px;
+}
+
+.hero-text {
+    max-width: 800px;
     margin: 0 auto;
-    display: block;
 }
 
-form .text-center {
-    margin-top: 20px;
+.subhead-text {
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
+.hero-section h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.btn-consult {
+    background-color: #00D1A0;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-consult:hover {
+    background-color: #00b38f;
+    color: white;
+}
+
+/* Calendar */
 .calendar-container {
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -508,36 +622,38 @@ form .text-center {
     background-color: #00B38F;
 }
 
+/* Footer */
 .page-footer {
     background-color: #1e2d2f;
     color: #d3d3d3;
-    padding: 60px 20px 30px;
+    padding: 40px 0 20px;
     font-size: 15px;
 }
 
 .page-footer .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .page-footer .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    margin: 0 -15px;
 }
 
 .footer-col {
     flex: 1 1 22%;
     min-width: 200px;
-    margin-bottom: 20px;
     padding: 0 15px;
+    margin-bottom: 30px;
 }
 
 .footer-col h5 {
     color: #ffffff;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 18px;
 }
 
@@ -562,16 +678,21 @@ form .text-center {
     color: #00D1A0;
 }
 
+.footer-col p {
+    color: #cbd5d8;
+    margin-bottom: 8px;
+}
+
 .footer-sosmed {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .footer-sosmed h5 {
     color: #ffffff;
-    margin-bottom: 20px;
-    font-weight: bold;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .footer-sosmed a {
@@ -591,7 +712,6 @@ form .text-center {
 .footer-sosmed a:hover {
     background-color: #00D1A0;
     color: #ffffff;
-    transform: translateY(-2px);
 }
 
 #copyright {
@@ -599,7 +719,6 @@ form .text-center {
     color: #aaa;
     font-size: 14px;
     margin-top: 20px;
-    padding-top: 20px;
 }
 
 #copyright a {
@@ -607,99 +726,51 @@ form .text-center {
     text-decoration: none;
 }
 
-.topbar {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    font-size: 14px;
-}
-
-.topbar .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.site-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.site-info a {
-    color: #666;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.site-info .divider {
-    color: #ccc;
-}
-
-.social-mini-button {
-    display: flex;
-    gap: 10px;
-}
-
-.social-mini-button a {
-    color: #666;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.social-mini-button a:hover {
-    color: #00D1A0;
-}
-
-.navbar {
-    padding: 15px 0;
-}
-
-.navbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-}
-
-.navbar-brand .text-primary {
-    color: #00D1A0 !important;
-}
-
-.input-group.input-navbar {
-    width: 300px;
-    margin: 0 20px;
-}
-
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
-    margin: 0;
-}
-
-.nav-link {
-    color: #666;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: #00D1A0;
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+    
+    .input-group.input-navbar {
+        width: 200px;
+    }
+    
+    .hero-section h1 {
+        font-size: 40px;
+    }
+    
+    .subhead-text {
+        font-size: 16px;
+    }
+    
+    .btn-consult {
+        padding: 10px 20px;
+    }
+    
+    .calendar-grid {
+        gap: 2px;
+    }
+    
+    .day {
+        height: 60px;
+        font-size: 14px;
+    }
+    
+    .calendar-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .calendar-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .legend {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 </style>
 
