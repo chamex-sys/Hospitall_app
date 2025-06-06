@@ -332,7 +332,6 @@ hr {
 <h1 style="text-align: center;">Doctors List</h1>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
-   <h1 style="text-align: center;">Doctors List</h1>
 
 <div style="position: relative; padding: 20px;">
 
@@ -342,12 +341,9 @@ hr {
   <!-- Conteneur scrollable -->
   <div id="doctorCarousel" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 10px 50px;">
 
-   <h1 style="text-align: center;">Doctors List</h1>
 
-<div style="position: relative; width: 100%; max-width: 900px; margin: auto; padding: 20px;">
 
     <!-- Flèche gauche -->
-    <button id="scrollLeft" style="position: absolute; left: -20px; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
 
     <!-- Fenêtre visible du carousel -->
     <div style="overflow: hidden; width: 100%;">
@@ -403,23 +399,9 @@ hr {
   </div>
 
   <!-- Flèche droite -->
-  <button id="scrollRight" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
 </div>
 
-<!-- Script JS pour gérer le scroll -->
-<script>
-  const container = document.getElementById('doctorCarousel');
-  const scrollAmount = 240; // pixels
 
-  document.getElementById('scrollLeft').onclick = () => {
-    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  };
-  document.getElementById('scrollRight').onclick = () => {
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  };
-</script>
-
-</div>
 
 <footer class="page-footer">
     <div class="container">
