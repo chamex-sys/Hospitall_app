@@ -24,13 +24,16 @@
         gap: 20px;
     }
 
-    .card {
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        transition: transform 0.3s ease;
-    }
+   .card {
+    /* styles existants... */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+    text-align: center; /* ✅ Ajout important */
+}
+
 
     .card:hover {
         transform: translateY(-5px);
