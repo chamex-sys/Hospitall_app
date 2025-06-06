@@ -214,7 +214,7 @@ hr {
         <div class="container wow zoomIn">
             <span class="subhead">Let's discover which doctor is the best for you!</span>
             <h1 class="display-4">Describe your symptoms</h1>
-            <a href="#app" class="btn btn-primary mt-4">Let's Consult</a>
+            <a href="#app" class="btn btn-primary mt-4 d-block">Let's Consult</a>
         </div>
     </div>
 </div>
