@@ -96,7 +96,7 @@ form .text-center {
         padding: 8px 16px;
     }
     .btn-primary {
-        width: 100%;
+        width: 200px;
             display: inline-block;
     }
 }
