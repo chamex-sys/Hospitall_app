@@ -8,6 +8,9 @@
     display: block;
     margin-top: 30px; /* ou comme tu veux */
     width: 200px ;
+     position: relative;
+    text-align: center;
+    justify-content: center;
 }
 
  
