@@ -333,61 +333,135 @@ hr {
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
 <div style="position: relative; padding: 20px;">
+<style>
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
 
-  <!-- Flèche gauche -->
-  <button id="scrollLeft" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 300%;
+    }
 
-  <!-- Carousel -->
-  <div id="doctorCarousel" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 10px 50px;">
-      @foreach ($doctors as $doctor)
-          <div style="min-width: 280px; max-width: 280px; flex-shrink: 0; margin: 0 10px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; background-color: #f9f9f9;">
-              <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-              <div style="padding: 10px; text-align: center;">
-                  <h3>{{ $doctor->name }}</h3>
-                  <p><strong>Speciality:</strong> {{ $doctor->speciality }}</p>
-                  <p><strong>Room:</strong> {{ $doctor->room }}</p>
-                  <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
-                      📅 See calendar
-                  </a>
-              </div>
-          </div>
-      @endforeach
-  </div>
+    .carousel-slide {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+    }
 
-  <!-- Flèche droite -->
-  <button id="scrollRight" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
+    .doctor-card {
+        flex: 1 1 calc(33.333% - 1rem);
+        border: 1px solid #ccc;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .nav-left {
+        left: 0;
+    }
+
+    .nav-right {
+        right: 0;
+    }
+
+    input[name="carousel"] {
+        display: none;
+    }
+
+    #slide1:checked ~ .carousel-track {
+        transform: translateX(0%);
+    }
+
+    #slide2:checked ~ .carousel-track {
+        transform: translateX(-100%);
+    }
+
+    #slide3:checked ~ .carousel-track {
+        transform: translateX(-200%);
+    }
+
+    /* Responsive (1 per slide on mobile) */
+    @media (max-width: 768px) {
+        .carousel-slide {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .doctor-card {
+            flex: 1 1 90%;
+        }
+    }
+</style>
+
+<div class="carousel-container">
+    <!-- Radio buttons for navigation -->
+    <input type="radio" name="carousel" id="slide1" checked>
+    <input type="radio" name="carousel" id="slide2">
+    <input type="radio" name="carousel" id="slide3">
+
+    <!-- Navigation buttons -->
+    <label for="slide1" class="nav-btn nav-left">&#9664;</label>
+    <label for="slide2" class="nav-btn nav-right">&#9654;</label>
+
+    <div class="carousel-track">
+        <!-- Slide 1 -->
+        <div class="carousel-slide">
+            @foreach($doctors->slice(0, 3) as $doctor)
+                <div class="doctor-card">
+                    <h4>{{ $doctor->name }}</h4>
+                    <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
+                </div>
+            @endforeach
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+            @foreach($doctors->slice(3, 3) as $doctor)
+                <div class="doctor-card">
+                    <h4>{{ $doctor->name }}</h4>
+                    <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
+                </div>
+            @endforeach
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+            @foreach($doctors->slice(6, 3) as $doctor)
+                <div class="doctor-card">
+                    <h4>{{ $doctor->name }}</h4>
+                    <p><strong>Spécialité :</strong> {{ $doctor->speciality }}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+  
 </div>
 
 <!-- Script JavaScript -->
 
-    <script>
-    const carousel = document.getElementById('doctorCarousel');
-    const cards = carousel.children;
-    const cardWidth = 300; // largeur carte + marges
-    let currentIndex = 0;
 
-    document.getElementById('scrollRight').onclick = () => {
-        if (currentIndex < cards.length - 3) {
-            currentIndex++;
-            updateCarousel();
-        }
-    };
 
-    document.getElementById('scrollLeft').onclick = () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    };
+  
 
-    function updateCarousel() {
-        const offset = -(cardWidth * currentIndex);
-        carousel.scrollTo({
-            left: -offset,
-            behavior: 'smooth'
-        });
-    }
-</script>
 
 
   </div>
