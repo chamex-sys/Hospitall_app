@@ -62,17 +62,24 @@ class SymptomController extends Controller
 
 public function suggest(Request $request)
 {
-    $symptoms = strtolower($request->input('symptoms')); // convertit en minuscule
+    $symptomsInput = strtolower($request->input('symptoms'));
 
-    // Liste simple de correspondance mot-clé → spécialité
-    $specialities = ['eye', 'heart', 'bones', 'nose', 'skin'];
+    $symptomKeywords = [
+        'skin' => ['boutons', 'eczéma', 'acné', 'démangeaisons', 'peau', 'psoriasis', 'taches'],
+        'eye' => ['vue', 'vision', 'flou', 'yeux', 'larmoiement', 'picotements', 'œil', 'oeil'],
+        'heart' => ['coeur', 'palpitations', 'douleur poitrine', 'essoufflement', 'hypertension', 'rythme cardiaque'],
+        'bones' => ['dos', 'articulations', 'genou', 'épaule', 'fracture', 'os', 'arthrose', 'douleurs musculaires'],
+        'nose' => ['nez', 'rhume', 'sinusite', 'toux', 'fievre', 'gorge', 'grippe', 'allergie', 'maux de tête'],
+    ];
 
     $matchedSpeciality = null;
 
-    foreach ($specialities as $speciality) {
-        if (str_contains($symptoms, $speciality)) {
-            $matchedSpeciality = $speciality;
-            break;
+    foreach ($symptomKeywords as $speciality => $keywords) {
+        foreach ($keywords as $keyword) {
+            if (str_contains($symptomsInput, $keyword)) {
+                $matchedSpeciality = $speciality;
+                break 2; // Sort des deux boucles
+            }
         }
     }
 
@@ -82,7 +89,8 @@ public function suggest(Request $request)
         $doctors = collect(); // Aucun médecin trouvé
     }
 
-    return view('patient.suggested_doctors', compact('doctors', 'symptoms'));
+    return view('patient.suggested_doctors', compact('doctors', 'symptomsInput'));
 }
+
 
 }
