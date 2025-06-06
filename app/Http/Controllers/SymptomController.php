@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 
+
 class SymptomController extends Controller
 {
     // Affiche le formulaire
@@ -56,4 +57,31 @@ class SymptomController extends Controller
             'speciality' => $speciality,
         ]);
     }
+
+
+public function suggest(Request $request)
+{
+    $symptoms = strtolower($request->input('symptoms')); // convertit en minuscule
+
+    // Liste simple de correspondance mot-clé → spécialité
+    $specialities = ['eye', 'heart', 'bones', 'nose', 'skin'];
+
+    $matchedSpeciality = null;
+
+    foreach ($specialities as $speciality) {
+        if (str_contains($symptoms, $speciality)) {
+            $matchedSpeciality = $speciality;
+            break;
+        }
+    }
+
+    if ($matchedSpeciality) {
+        $doctors = Doctor::where('speciality', $matchedSpeciality)->get();
+    } else {
+        $doctors = collect(); // Aucun médecin trouvé
+    }
+
+    return view('patient.suggested_doctors', compact('doctors', 'symptoms'));
+}
+
 }
