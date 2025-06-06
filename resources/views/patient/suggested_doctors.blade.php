@@ -73,7 +73,7 @@
         <div class="grid">
             @foreach($doctors as $doctor)
                 <div class="card">
-                    <img src="doctorimage/{{$doctors->image}}" alt="Image de {{ $doctor->name }}">
+                    <img src="/doctorimage/{{$doctors->image}}" alt="Image de {{ $doctor->name }}">
                     <p><span class="label">Nom :</span> {{ $doctor->name }}</p>
                     <p><span class="label">Téléphone :</span> {{ $doctor->phone ?? 'Non renseigné' }}</p>
                     <p><span class="label">Spécialité :</span> {{ $doctor->speciality }}</p>
