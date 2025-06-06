@@ -110,7 +110,7 @@
 <style>
  .hero-section a.btn-primary {
     display: block;
-    margin: 30px auto 0 auto; /* 30px en haut, auto à gau
+    margin: 30px auto 0 auto; /* 30px en haut, auto à gau*/
     width: 200px;
     position: relative;
     text-align: center;
@@ -119,7 +119,7 @@
 
  
 .page-hero {
-    background-color: rgba(0, 0, 0, 0.4); /* couche somb
+    background-color: rgba(0, 0, 0, 0.4); 
     color: white; 
     padding: 100px 0;
     background-blend-mode: overlay;
