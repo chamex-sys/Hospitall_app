@@ -3,50 +3,49 @@
 @section('content')
 
 <style>
+
+
+ 
 .page-hero {
     background-color: rgba(0, 0, 0, 0.6); /* couche sombre */
-    position: relative;
-    color: white;
+    color: white; 
     padding: 100px 0;
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    text-align: center;
 }
 
 .hero-section .subhead {
     font-size: 20px;
     color: white;
     font-weight: 300;
-    writing-mode: vertical-rl; /* texte vertical */
-    transform: rotate(180deg); /* pour que le texte soit lisible de bas en haut */
+    display: block;
     margin-bottom: 20px;
 }
 
 .hero-section h1 {
     font-size: 48px;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 0;
     background-color: rgba(0, 0, 0, 0.5); /* fond sombre semi-transparent */
     display: inline-block;
     padding: 10px 20px;
     border-radius: 10px;
     color: #fff;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .btn-primary {
     background-color: #00D1A0;
     border-color: #00B38F;
     font-weight: bold;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    padding: 15px 30px;
+    font-size: 18px;
+    padding: 12px 30px;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .btn-primary:hover {
@@ -54,29 +53,22 @@
     border-color: #00A481;
 }
 
-.form-control {
-    border-radius: 8px;
-    padding: 15px;
-    font-size: 16px;
-    border: 1px solid #ced4da;
-}
-
 .page-section {
     padding: 60px 0;
-}
-
-h1.text-center {
-    color: #00D1A0;
-    font-weight: 900; /* plus solide */
-    margin-bottom: 40px;
-    font-size: 56px; /* plus grand */
     text-align: center;
 }
 
+.page-section h1.text-center {
+    color: #00D1A0;
+    font-weight: 900; /* plus solide */
+    font-size: 36px; /* plus grand */
+    margin-bottom: 40px;
+}
+
 #symptoms {
-    min-height: 250px; /* élargi en hauteur */
-    width: 100%; /* occupe toute la largeur disponible */
-    max-width: 800px; /* limite max largeur */
+    width: 100%;
+    max-width: 700px;
+    min-height: 220px; /* un peu plus grand */
     resize: vertical;
     background-color: #f8f9fa;
     border: 1px solid #ced4da;
@@ -84,8 +76,26 @@ h1.text-center {
     border-radius: 8px;
     padding: 20px;
     font-size: 18px;
+    margin: 0 auto;
+    display: block;
 }
 
+form .text-center {
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 32px;
+        padding: 8px 16px;
+    }
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+/* Footer (garde la version complète) */
 .page-footer {
     background-color: #1e2d2f;
     color: #d3d3d3;
@@ -176,44 +186,12 @@ hr {
     text-decoration: none;
 }
 
-/* Centrer le formulaire de saisie */
+/* Centrer le formulaire */
 #app form .row {
     justify-content: center;
     text-align: center;
-    width: 100% ;
+    width: 100%;
 }
-
-/* Centrer le bouton 'Envoyer' proprement */
-form .text-center {
-    margin-top: 20px;
-}
-
-/* Amélioration responsive */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 32px;
-        padding: 8px 16px;
-        writing-mode: horizontal-tb;
-        transform: none;
-    }
-    .hero-section .subhead {
-        writing-mode: horizontal-tb;
-        transform: none;
-        margin-bottom: 10px;
-    }
-    .btn-primary {
-        width: 100%;
-        writing-mode: horizontal-tb;
-        transform: none;
-        padding: 10px 0;
-    }
-    h1.text-center {
-        font-size: 40px;
-    }
-    #symptoms {
-        max-width: 100%;
-    }
-
 
 
 
