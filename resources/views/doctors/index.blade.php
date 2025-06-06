@@ -96,15 +96,16 @@
           </div> <!-- .container -->
         </nav>
       </header>
- <div class="page-hero bg-image overlay-dark" style="background-image: url(..
-   <div class="hero-section">
-     <div class="container text-center wow zoomIn" id="a">
-       <span class="subhead">Let's make your life happier</span>
-       <h1 class="display-4">Healthy Living</h1>
-       <a href="#app" class="btn btn-primary">Let's Consult</a>
-     </div>
-   </div>
- </div>
+
+<div class="page-hero bg-image overlay-dark" style="background-image: url('{{ asset('assets/img/bg_image_1.jpg') }}');">
+    <div class="hero-section text-center">
+        <div class="container wow zoomIn">
+            <span class="subhead">Let's discover which doctor is the best for you!</span>
+            <h1 class="display-4">Describe your symptoms</h1>
+            <a href="#app" class="btn btn-primary mt-4 d-block">Let's Consult</a>
+        </div>
+    </div>
+</div>
 <style>
  .hero-section a.btn-primary {
     display: block;
