@@ -309,7 +309,11 @@ hr {
 }
 
 
-
+@media (max-width: 992px) {
+  .doctor-card {
+    width: 90vw !important;
+  }
+}
 
 
 
@@ -332,52 +336,66 @@ hr {
 @section('content')
 <h1 style="text-align: center;">Doctors List</h1>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
-   <h1 style="text-align: center;">Doctors List</h1>
+<h1 style="text-align: center;">Doctors List</h1>
 
-<div style="position: relative; padding: 20px;">
+<div style="position: relative; overflow: hidden; max-width: 100%; padding: 0 60px;">
 
-  <!-- Flèche gauche -->
-  <button id="scrollLeft" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
+  <!-- Flèches -->
+  <button id="prevBtn" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
 
-  <!-- Conteneur scrollable -->
-  <div id="doctorCarousel" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 10px 50px;">
+  <button id="nextBtn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
 
+  <!-- Carrousel -->
+  <div id="doctorSlider" style="display: flex; transition: transform 0.5s ease;">
     @foreach ($doctors as $doctor)
-        <div style="min-width: 220px; flex-shrink: 0; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; overflow: hidden; text-align: center; background-color: #f9f9f9;">
-            <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 190px; height: 250px; object-fit: cover; margin-top: 10px;">
-            <div style="padding: 10px;">
-                <h3 style="margin: 10px 0;">{{ $doctor->name }}</h3>
-                <p><strong>Speciality :</strong> {{ $doctor->speciality }}</p>
-                <p><strong>Room :</strong> {{ $doctor->room }}</p>
-                <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
-                    📅 See calendar
-                </a>
-            </div>
-        </div>
+      <div class="doctor-card" style="width: 300px; margin: 0 10px; flex-shrink: 0; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; overflow: hidden; text-align: center; background-color: #f9f9f9;">
+          <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="{{ $doctor->name }}" style="width: 100%; height: 250px; object-fit: cover;">
+          <div style="padding: 10px;">
+              <h3>{{ $doctor->name }}</h3>
+              <p><strong>Speciality :</strong> {{ $doctor->speciality }}</p>
+              <p><strong>Room :</strong> {{ $doctor->room }}</p>
+              <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
+                  📅 See calendar
+              </a>
+          </div>
+      </div>
     @endforeach
-
   </div>
-
-  <!-- Flèche droite -->
-  <button id="scrollRight" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
 </div>
-
-<!-- Script JS pour gérer le scroll -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('doctorCarousel');
-    const scrollAmount = 240; // pixels
+    const slider = document.getElementById('doctorSlider');
+    const cards = document.querySelectorAll('.doctor-card');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-    document.getElementById('scrollLeft').addEventListener('click', () => {
-      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    let currentIndex = 0;
+    const visibleCards = 3;
+    const totalCards = cards.length;
+
+    function updateSlider() {
+      const offset = currentIndex * (cards[0].offsetWidth + 20);
+      slider.style.transform = `translateX(-${offset}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < totalCards - visibleCards) {
+        currentIndex++;
+        updateSlider();
+      }
     });
 
-    document.getElementById('scrollRight').addEventListener('click', () => {
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
     });
+
+    window.addEventListener('resize', updateSlider);
   });
 </script>
+
 
 
 </div>
