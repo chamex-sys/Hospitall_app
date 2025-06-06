@@ -12,10 +12,11 @@
         margin: 40px auto;
     }
 
-    h2 {
+    h1 {
         color: #00D1A0;
         margin-bottom: 30px;
         text-align: center;
+        front-weight: 4px ;
     }
 
     .grid {
@@ -69,7 +70,7 @@
 </style>
 
 <div class="container">
-<h2>Results for : "{{ $symptomsInput }}"</h2>
+<h1>Results for : "{{ $symptomsInput }}"</h1>
 
     @if($doctors->isEmpty())
         <div class="no-result">
