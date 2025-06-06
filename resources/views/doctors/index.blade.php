@@ -359,7 +359,8 @@ hr {
 </div>
 
 <!-- Script JavaScript -->
-<script>
+
+    <script>
     const carousel = document.getElementById('doctorCarousel');
     const cards = carousel.children;
     const cardWidth = 300; // largeur carte + marges
@@ -381,9 +382,13 @@ hr {
 
     function updateCarousel() {
         const offset = -(cardWidth * currentIndex);
-        carousel.style.transform = `translateX(${offset}px)`;
+        carousel.scrollTo({
+            left: -offset,
+            behavior: 'smooth'
+        });
     }
 </script>
+
 
   </div>
 
