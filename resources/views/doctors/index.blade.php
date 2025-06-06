@@ -1,127 +1,113 @@
+<link rel="stylesheet" href="../assets/css/maicons.css">
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
+<link rel="stylesheet" href="../assets/vendor/animate/animate.css">
+<link rel="stylesheet" href="../assets/css/theme.css">
 
-
-
-      <link rel="stylesheet" href="../assets/css/maicons.css">
-
-
-
-      <link rel="stylesheet" href="../assets/css/bootstrap.css">
-
-      <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
-
-      <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
-
-      <link rel="stylesheet" href="../assets/css/theme.css">
-      
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
- <header>
-        <div class="topbar">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-8 text-sm">
-                <div class="site-info">
-                  <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
-                  <span class="divider">|</span>
-                  <a href="#"><span class="mai-mail text-primary"></span>onehealth@gmail.com</a>
-                </div>
-              </div>
-              <div class="col-sm-4 text-right text-sm">
-                <div class="social-mini-button">
-                  <a href="#"><span class="mai-logo-facebook-f"></span></a>
-                  <a href="#"><span class="mai-logo-twitter"></span></a>
-                  <a href="#"><span class="mai-logo-dribbble"></span></a>
-                  <a href="#"><span class="mai-logo-instagram"></span></a>
-                </div>
-              </div>
-            </div> <!-- .row -->
-          </div> <!-- .container -->
-        </div> <!-- .topbar -->
 
-        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-          <div class="container">
+<header>
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 text-sm">
+                    <div class="site-info">
+                        <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
+                        <span class="divider">|</span>
+                        <a href="#"><span class="mai-mail text-primary"></span>onehealth@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-right text-sm">
+                    <div class="social-mini-button">
+                        <a href="#"><span class="mai-logo-facebook-f"></span></a>
+                        <a href="#"><span class="mai-logo-twitter"></span></a>
+                        <a href="#"><span class="mai-logo-dribbble"></span></a>
+                        <a href="#"><span class="mai-logo-instagram"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container">
             <a class="navbar-brand" href="#a"><span class="text-primary">One</span>-Health</a>
 
             <form action="#">
-              <div class="input-group input-navbar">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
+                <div class="input-group input-navbar">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
                 </div>
-                <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
-              </div>
             </form>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-l
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupport">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="\html\about.html" >About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="\html\doctors.html">Doctors</a>
-                </li>  
-                  <li class="nav-item">
-                  <a class="nav-link" href="\html\blog.html">News</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="\html\contact.html">Contact</a>
-                </li>
-               
-                @if (Route::has('login'))
-                @auth 
-                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('myappointment')}}" style="background-color:greenyellow;color:white;">My Appointments</a>
-                </li>
-        
-                <x-app-layout></x-app-layout>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\html\about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\html\doctors.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\html\blog.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\html\contact.html">Contact</a>
+                    </li>
 
-                @else 
-                <li class="nav-item">
-                  <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login </a>
-                </li>
-                <li class="nav-item">
-                  <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
-                </li>
-
-@endauth
-@endif
-
-              </ul>
-            </div> <!-- .navbar-collapse -->
-          </div> <!-- .container -->
-        </nav>
-      </header>
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('myappointment')}}" style="background-color:greenyellow;color:white;">My Appointments</a>
+                            </li>
+                            <x-app-layout></x-app-layout>
+                        @else
+                            <li class="nav-item">
+                                <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
+                            </li>
+                        @endauth
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <div class="page-hero bg-image overlay-dark" style="background-image: url('{{ asset('assets/img/bg_image_1.jpg') }}');">
     <div class="hero-section text-center">
         <div class="container wow zoomIn">
-  <span class="subhead">See when your favorite doctor is available ! </span>
-<h1 class="display-4">Pick you day </h1>
-
+            <span class="subhead">See when your favorite doctor is available!</span>
+            <h1 class="display-4">Pick you day</h1>
             <a href="#app" class="btn btn-primary mt-4 d-block">Let's Consult</a>
         </div>
     </div>
 </div>
-<style>   
- .hero-section a.btn-primary {
+
+<style>
+.hero-section a.btn-primary {
     display: block;
-    margin: 30px auto 0 auto; /* 30px en haut, auto à gau*/
+    margin: 30px auto 0 auto;
     width: 200px;
     position: relative;
     text-align: center;
 }
 
-
- 
 .page-hero {
-    background-color: rgba(0, 0, 0, 0.4); 
-    color: white; 
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
     padding: 100px 0;
     background-blend-mode: overlay;
     background-size: cover;
@@ -142,7 +128,6 @@
     font-size: 48px;
     font-weight: 700;
     margin-top: 0;
- 
     display: inline-block;
     padding: 10px 20px;
     border-radius: 10px;
@@ -164,7 +149,6 @@
 .btn-primary:hover {
     background-color: #00B38F;
     border-color: #00A481;
-    
 }
 
 .page-section {
@@ -174,15 +158,15 @@
 
 .page-section h1.text-center {
     color: #00D1A0;
-    font-weight: 900; /* plus solide */
-    font-size: 36px; /* plus grand */
+    font-weight: 900;
+    font-size: 36px;
     margin-bottom: 40px;
 }
 
 #symptoms {
     width: 100%;
     max-width: 700px;
-    min-height: 220px; /* un peu plus grand */
+    min-height: 220px;
     resize: vertical;
     background-color: #f8f9fa;
     border: 1px solid #ced4da;
@@ -198,7 +182,6 @@ form .text-center {
     margin-top: 20px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 32px;
@@ -206,11 +189,10 @@ form .text-center {
     }
     .btn-primary {
         width: 200px;
-            display: inline-block;
+        display: inline-block;
     }
 }
 
-/* Footer (garde la version complète) */
 .page-footer {
     background-color: #1e2d2f;
     color: #d3d3d3;
@@ -301,105 +283,106 @@ hr {
     text-decoration: none;
 }
 
-/* Centrer le formulaire */
 #app form .row {
     justify-content: center;
     text-align: center;
     width: 100%;
 }
-
-
-@media (max-width: 992px) {
-  .doctor-card {
-    width: 90vw !important;
-  }
-}
-
-
-
-
-
-
-
-
-
 </style>
 
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto py-8">
-        <h2 class="text-2xl font-bold mb-4">Docteurs suggérés :</h2>
+<h1 style="text-align: center;">Doctors List</h1>
 
-        <!-- Conteneur pour les cartes de docteurs -->
-        <div id="doctor-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <!-- Le contenu sera inséré par JavaScript -->
-        </div>
+<div style="position: relative; padding: 20px;">
+    <!-- Flèche gauche -->
+    <button id="scrollLeft" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
 
-        <!-- Boutons navigation -->
-        <div class="flex justify-center gap-4">
-            <button id="prev-btn" class="bg-blue-600 text-white px-4 py-2 rounded" disabled>← Précédent</button>
-            <button id="next-btn" class="bg-blue-600 text-white px-4 py-2 rounded">Suivant →</button>
-        </div>
+    <!-- Conteneur pour afficher 3 docteurs -->
+    <div id="doctorCarousel" style="display: flex; justify-content: center; gap: 20px; padding: 10px 50px; min-height: 400px;">
+        @foreach ($doctors as $index => $doctor)
+            <div class="doctor-card" data-index="{{ $index }}" style="min-width: 220px; flex-shrink: 0; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; overflow: hidden; text-align: center; background-color: #f9f9f9; display: none;">
+                <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 190px; height: 250px; object-fit: cover; margin-top: 10px;">
+                <div style="padding: 10px;">
+                    <h3 style="margin: 10px 0;">{{ $doctor->name }}</h3>
+                    <p><strong>Speciality :</strong> {{ $doctor->speciality }}</p>
+                    <p><strong>Room :</strong> {{ $doctor->room }}</p>
+                    <a href="{{ route('doctors.calendar', $doctor->id) }}" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #00D3AF; color: white; border-radius: 5px; text-decoration: none;">
+                        📅 See calendar
+                    </a>
+                </div>
+            </div>
+        @endforeach
     </div>
 
-    <!-- JavaScript -->
-    <script>
-        const allDoctors = @json($doctors);
-        const doctorsPerPage = 3;
-        let currentPage = 0;
+    <!-- Flèche droite -->
+    <button id="scrollRight" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
+</div>
 
-        const container = document.getElementById('doctor-container');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
+<!-- Indicateur de page -->
+<div style="text-align: center; margin-top: 20px;">
+    <span id="pageIndicator" style="color: #00D1A0; font-weight: bold;"></span>
+</div>
 
-        function renderDoctors() {
-            container.innerHTML = '';
+<!-- Script JS pour gérer la pagination par groupes de 3 -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const doctorCards = document.querySelectorAll('.doctor-card');
+    const totalDoctors = doctorCards.length;
+    const doctorsPerPage = 3;
+    const totalPages = Math.ceil(totalDoctors / doctorsPerPage);
+    let currentPage = 0;
 
-            const start = currentPage * doctorsPerPage;
-            const end = start + doctorsPerPage;
-            const visibleDoctors = allDoctors.slice(start, end);
+    const leftButton = document.getElementById('scrollLeft');
+    const rightButton = document.getElementById('scrollRight');
+    const pageIndicator = document.getElementById('pageIndicator');
 
-            visibleDoctors.forEach(doctor => {
-                const card = document.createElement('div');
-                card.className = 'border p-4 rounded shadow';
-                card.innerHTML = `
-                    <h3 class="text-xl font-semibold mb-2">${doctor.name}</h3>
-                    <p class="text-gray-700"><strong>Spécialité:</strong> ${doctor.speciality}</p>
-                `;
-                container.appendChild(card);
-            });
+    function showDoctors(page) {
+        // Cacher tous les docteurs
+        doctorCards.forEach(card => {
+            card.style.display = 'none';
+        });
 
-            prevBtn.disabled = currentPage === 0;
-            nextBtn.disabled = end >= allDoctors.length;
+        // Afficher les 3 docteurs de la page courante
+        const startIndex = page * doctorsPerPage;
+        const endIndex = Math.min(startIndex + doctorsPerPage, totalDoctors);
+
+        for (let i = startIndex; i < endIndex; i++) {
+            if (doctorCards[i]) {
+                doctorCards[i].style.display = 'block';
+            }
         }
 
-        prevBtn.addEventListener('click', () => {
-            if (currentPage > 0) {
-                currentPage--;
-                renderDoctors();
-            }
-        });
+        // Mettre à jour l'indicateur de page
+        pageIndicator.textContent = `Page ${page + 1} sur ${totalPages}`;
 
-        nextBtn.addEventListener('click', () => {
-            if ((currentPage + 1) * doctorsPerPage < allDoctors.length) {
-                currentPage++;
-                renderDoctors();
-            }
-        });
+        // Gérer la visibilité des boutons
+        leftButton.style.opacity = page === 0 ? '0.5' : '1';
+        rightButton.style.opacity = page === totalPages - 1 ? '0.5' : '1';
+        leftButton.disabled = page === 0;
+        rightButton.disabled = page === totalPages - 1;
+    }
 
-        // Premier affichage
-        renderDoctors();
-    </script>
+    // Événements des boutons
+    leftButton.addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            showDoctors(currentPage);
+        }
+    });
 
+    rightButton.addEventListener('click', () => {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            showDoctors(currentPage);
+        }
+    });
 
-
-
-
-
-
-
-</div>
+    // Initialiser l'affichage
+    showDoctors(currentPage);
+});
+</script>
 
 <footer class="page-footer">
     <div class="container">
@@ -453,25 +436,10 @@ hr {
     </div>
 </footer>
 
-
-    <script src="../assets/js/jquery-3.5.1.min.js"></script>
-
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
-    <script src="../assets/vendor/wow/wow.min.js"></script>
-
-    <script src="../assets/js/theme.js"></script>
-
-
-
-
+<script src="../assets/js/jquery-3.5.1.min.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+<script src="../assets/vendor/wow/wow.min.js"></script>
+<script src="../assets/js/theme.js"></script>
 
 @endsection
-
-
-
-
-
-
