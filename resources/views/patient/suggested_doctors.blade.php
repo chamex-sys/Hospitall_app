@@ -77,23 +77,41 @@
         font-size: 18px;
         color: #555;
     }
-    .page-footer {
-    background-color: #2d3e3f;
+    
+
+.page-footer {
+    background-color: #1e2d2f;
     color: #d3d3d3;
-    padding: 60px 0 30px;
+    padding: 60px 20px 30px;
     font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.page-footer h5 {
-    color: #ffffff;
-    font-weight: bold;
+.page-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1 1 22%;
+    min-width: 200px;
     margin-bottom: 20px;
+}
+
+.footer-col h5 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .footer-menu {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 .footer-menu li {
@@ -110,15 +128,9 @@
     color: #00D1A0;
 }
 
-.footer-link {
-    display: block;
-    color: #cbd5d8;
-    margin-bottom: 10px;
-    text-decoration: none;
-}
-
-.footer-link:hover {
-    color: #00D1A0;
+.footer-sosmed {
+    text-align: center;
+    margin-top: 30px;
 }
 
 .footer-sosmed a {
@@ -126,13 +138,13 @@
     width: 38px;
     height: 38px;
     line-height: 38px;
-    margin-right: 10px;
+    margin: 0 5px;
     text-align: center;
     border-radius: 50%;
-    background-color: #1f2b2c;
+    background-color: #00000050;
     color: #ffffff;
     font-size: 16px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
 .footer-sosmed a:hover {
@@ -140,11 +152,16 @@
     color: #ffffff;
 }
 
+hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 40px;
+}
+
 #copyright {
     text-align: center;
-    margin-top: 30px;
-    color: #bcbcbc;
+    color: #aaa;
     font-size: 14px;
+    margin-top: 20px;
 }
 
 #copyright a {
@@ -152,14 +169,6 @@
     text-decoration: none;
 }
 
-#copyright a:hover {
-    text-decoration: underline;
-}
-
-hr {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin-top: 40px;
-}
 
 </style>
 
@@ -184,57 +193,61 @@ hr {
         </div>
     @endif
 </div>
-      <footer class="page-footer">
-                  <div class="container">
-          <div class="row px-md-3">
-            <div class="col-sm-6 col-lg-3 py-3">
-              <h5>Company</h5>
-              <ul class="footer-menu">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Career</a></li>
-                <li><a href="#">Editorial Team</a></li>
-                <li><a href="#">Protection</a></li>
-              </ul>
+      
+             
+            
+   <footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h5>Company</h5>
+                <ul class="footer-menu">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Editorial Team</a></li>
+                    <li><a href="#">Protection</a></li>
+                </ul>
             </div>
-            <div class="col-sm-6 col-lg-3 py-3">
-              <h5>More</h5>
-              <ul class="footer-menu">
-                <li><a href="#">Terms & Condition</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Advertise</a></li>
-                <li><a href="#">Join as Doctors</a></li>
-              </ul>
+            <div class="footer-col">
+                <h5>More</h5>
+                <ul class="footer-menu">
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Join as Doctors</a></li>
+                </ul>
             </div>
-            <div class="col-sm-6 col-lg-3 py-3">
-              <h5>Our partner</h5>
-              <ul class="footer-menu">
-                <li><a href="#">One-Fitness</a></li>
-                <li><a href="#">One-Drugs</a></li>
-                <li><a href="#">One-Live</a></li>
-              </ul>
+            <div class="footer-col">
+                <h5>Our partner</h5>
+                <ul class="footer-menu">
+                    <li><a href="#">One-Fitness</a></li>
+                    <li><a href="#">One-Drugs</a></li>
+                    <li><a href="#">One-Live</a></li>
+                </ul>
             </div>
-            <div class="col-sm-6 col-lg-3 py-3">
-              <h5>Contact</h5>
-              <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-              <a href="#" class="footer-link">701-573-7582</a>
-              <a href="#" class="footer-link">healthcare@temporary.net</a>
-
-              <h5 class="mt-3">Social Media</h5>
-              <div class="footer-sosmed mt-3">
-                <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
-                <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
-                <a href="#" target="_blank"><span class="mai-logo-google-plus-g"></span></a>
-                <a href="#" target="_blank"><span class="mai-logo-instagram"></span></a>
-                <a href="#" target="_blank"><span class="mai-logo-linkedin"></span></a>
-              </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <p>351 Willow Street Franklin, MA 02038</p>
+                <p>701-573-7582</p>
+                <p>healthcare@temporary.net</p>
             </div>
-          </div>
-
-          <hr>
-
-          <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
         </div>
-      </footer>
+
+        <div class="footer-sosmed">
+            <h5>Social Media</h5>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <hr>
+        <div id="copyright">
+            Copyright © 2020 <a href="#">MACode ID</a>. All right reserved
+        </div>
+    </div>
+</footer>
+
 
     <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
