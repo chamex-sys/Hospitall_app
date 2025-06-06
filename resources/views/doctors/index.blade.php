@@ -106,15 +106,108 @@
    </div>
  </div>
 <style>
-    .page-footer {
-    background-color: #e9ecef;
-    padding: 20px 0;
-    margin-top: 40px;
+ .hero-section a.btn-primary {
+    display: block;
+    margin: 30px auto 0 auto; /* 30px en haut, auto à gau
+    width: 200px;
+    position: relative;
     text-align: center;
-    font-size: 14px;
-    color: #6c757d;
-    border-top: 1px solid #dee2e6;
 }
+
+
+ 
+.page-hero {
+    background-color: rgba(0, 0, 0, 0.4); /* couche somb
+    color: white; 
+    padding: 100px 0;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero-section .subhead {
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 0;
+ 
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #00D1A0;
+    border-color: #00B38F;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 30px;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #00B38F;
+    border-color: #00A481;
+    
+}
+
+.page-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-section h1.text-center {
+    color: #00D1A0;
+    font-weight: 900; /* plus solide */
+    font-size: 36px; /* plus grand */
+    margin-bottom: 40px;
+}
+
+#symptoms {
+    width: 100%;
+    max-width: 700px;
+    min-height: 220px; /* un peu plus grand */
+    resize: vertical;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 18px;
+    margin: 0 auto;
+    display: block;
+}
+
+form .text-center {
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 32px;
+        padding: 8px 16px;
+    }
+    .btn-primary {
+        width: 200px;
+            display: inline-block;
+    }
+}
+
+/* Footer (garde la version complète) */
 .page-footer {
     background-color: #1e2d2f;
     color: #d3d3d3;
@@ -204,6 +297,18 @@ hr {
     color: #00D1A0;
     text-decoration: none;
 }
+
+/* Centrer le formulaire */
+#app form .row {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
 
 
 
