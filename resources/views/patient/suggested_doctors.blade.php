@@ -63,7 +63,7 @@
 </style>
 
 <div class="container">
-    <h2>Résultats pour : "{{ $symptoms }}"</h2>
+<h2>Résultats pour : "{{ $symptomsInput }}"</h2>
 
     @if($doctors->isEmpty())
         <div class="no-result">
