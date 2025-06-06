@@ -514,21 +514,31 @@ form .text-center {
     margin: 0 auto;
 }
 
+.page-footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 .footer-col {
     flex: 1 1 22%;
     min-width: 200px;
     margin-bottom: 20px;
+    padding: 0 15px;
 }
 
 .footer-col h5 {
     color: #ffffff;
     margin-bottom: 20px;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .footer-menu {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-menu li {
@@ -539,6 +549,7 @@ form .text-center {
     color: #cbd5d8;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 15px;
 }
 
 .footer-menu a:hover {
@@ -547,31 +558,35 @@ form .text-center {
 
 .footer-sosmed {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-sosmed h5 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .footer-sosmed a {
     display: inline-block;
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
-    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 8px;
     text-align: center;
     border-radius: 50%;
-    background-color: #00000050;
+    background-color: rgba(0, 0, 0, 0.3);
     color: #ffffff;
-    font-size: 16px;
-    transition: background 0.3s, color 0.3s;
+    font-size: 18px;
+    transition: all 0.3s;
 }
 
 .footer-sosmed a:hover {
     background-color: #00D1A0;
     color: #ffffff;
-}
-
-hr {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin-top: 40px;
+    transform: translateY(-2px);
 }
 
 #copyright {
@@ -579,6 +594,7 @@ hr {
     color: #aaa;
     font-size: 14px;
     margin-top: 20px;
+    padding-top: 20px;
 }
 
 #copyright a {
@@ -586,35 +602,95 @@ hr {
     text-decoration: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 32px;
-        padding: 8px 16px;
-    }
-    .btn-primary {
-        width: 200px;
-        display: inline-block;
-    }
-    .calendar-grid {
-        gap: 2px;
-    }
-    .day {
-        height: 60px;
-        font-size: 14px;
-    }
-    .calendar-navigation {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .calendar-footer {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .legend {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.topbar {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.topbar .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.site-info a {
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.site-info .divider {
+    color: #ccc;
+}
+
+.social-mini-button {
+    display: flex;
+    gap: 10px;
+}
+
+.social-mini-button a {
+    color: #666;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.social-mini-button a:hover {
+    color: #00D1A0;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.input-group.input-navbar {
+    width: 300px;
+    margin: 0 20px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #00D1A0;
 }
 </style>
 
