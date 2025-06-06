@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+      <link rel="stylesheet" href="../assets/css/maicons.css">
+
+
+
+      <link rel="stylesheet" href="../assets/css/bootstrap.css">
+
+      <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
+
+      <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
+
+      <link rel="stylesheet" href="../assets/css/theme.css">
+      
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
      <header>
         <div class="topbar">
           <div class="container">
