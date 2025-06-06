@@ -14,7 +14,7 @@
 
      
      <header>
-        <div class="topbar">
+        <div class="topbar" style="height= 200px;">
           <div class="container">
             <div class="row">
               <div class="col-sm-8 text-sm">
@@ -98,6 +98,7 @@
 
 
 <style>
+    
     .hero-section a.btn-primary {
     display: block;
     margin: 30px auto 0 auto; /* 30px en haut, auto à gauche et droite */
@@ -189,7 +190,7 @@
     }
 
     .container {
-        max-width: 300px;
+        max-width: 1150px;
         margin: 40px auto;
     }
  
