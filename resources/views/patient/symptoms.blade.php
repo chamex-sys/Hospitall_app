@@ -117,7 +117,7 @@
 
  
 .page-hero {
-    background-color: rgba(0, 0, 0, 0.6); /* couche sombre */
+    background-color: rgba(0, 0, 0, 0.4); /* couche sombre */
     color: white; 
     padding: 100px 0;
     background-blend-mode: overlay;
