@@ -19,6 +19,15 @@
         font-weight: 9px ;
         font-size: 25px ;
     }
+.page-footer {
+    background-color: #e9ecef;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #6c757d;
+    border-top: 1px solid #dee2e6;
+}
 
     .grid {
         display: grid;
