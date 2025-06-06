@@ -4,8 +4,8 @@
 
 <style>
     .page-hero {
-        background-color: #00D1A0;
-        color: white;
+/*         background-color: #00D1A0;*/
+        color: white; 
         padding: 100px 0;
         background-blend-mode: overlay;
         background-size: cover;
