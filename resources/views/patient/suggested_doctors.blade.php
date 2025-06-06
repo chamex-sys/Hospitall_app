@@ -14,9 +14,9 @@
 
      
      <header>
-        <div class="topbar" style="height= 200px;">
-          <div class="container">
-            <div class="row">
+        <div class="topbar"  style="height= 200px;" >
+          <div class="container" style="height= 200px;" >
+            <div class="row" style="height= 200px;">
               <div class="col-sm-8 text-sm">
                 <div class="site-info">
                   <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
@@ -36,8 +36,8 @@
           </div> <!-- .container -->
         </div> <!-- .topbar -->
 
-        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-          <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="height= 200px;">
+          <div class="container" style="height= 200px;">
             <a class="navbar-brand" href="#a"><span class="text-primary">One</span>-Health</a>
 
             <form action="#">
