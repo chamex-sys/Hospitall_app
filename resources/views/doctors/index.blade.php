@@ -332,8 +332,18 @@ hr {
 <h1 style="text-align: center;">Doctors List</h1>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+   <h1 style="text-align: center;">Doctors List</h1>
+
+<div style="position: relative; padding: 20px;">
+
+  <!-- Flèche gauche -->
+  <button id="scrollLeft" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">‹</button>
+
+  <!-- Conteneur scrollable -->
+  <div id="doctorCarousel" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 10px 50px;">
+
     @foreach ($doctors as $doctor)
-        <div style="width: 220px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; overflow: hidden; text-align: center; background-color: #f9f9f9;">
+        <div style="min-width: 220px; flex-shrink: 0; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 8px #ccc; overflow: hidden; text-align: center; background-color: #f9f9f9;">
             <img src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Image de {{ $doctor->name }}" style="width: 190px; height: 250px; object-fit: cover; margin-top: 10px;">
             <div style="padding: 10px;">
                 <h3 style="margin: 10px 0;">{{ $doctor->name }}</h3>
@@ -345,6 +355,26 @@ hr {
             </div>
         </div>
     @endforeach
+
+  </div>
+
+  <!-- Flèche droite -->
+  <button id="scrollRight" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background-color: #00D1A0; border: none; border-radius: 50%; width: 40px; height: 40px; color: white; z-index: 10;">›</button>
+</div>
+
+<!-- Script JS pour gérer le scroll -->
+<script>
+  const container = document.getElementById('doctorCarousel');
+  const scrollAmount = 240; // pixels
+
+  document.getElementById('scrollLeft').onclick = () => {
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  };
+  document.getElementById('scrollRight').onclick = () => {
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+</script>
+
 </div>
 
 <footer class="page-footer">
