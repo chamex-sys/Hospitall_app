@@ -38,7 +38,7 @@
 
     .card img {
         width: 100%;
-        height: 200px;
+        height: 300px;
         object-fit: cover;
         border-radius: 8px;
         margin-bottom: 15px;
@@ -73,7 +73,7 @@
         <div class="grid">
             @foreach($doctors as $doctor)
                 <div class="card">
-                    <img src="/doctorimage/{{$doctor->image}}" alt="Image de {{ $doctor->name }}" height="250px" width="100px">
+                    <img src="/doctorimage/{{$doctor->image}}" alt="Image de {{ $doctor->name }}" height="25px" width="10px">
                     <p><span class="label">Nom :</span> {{ $doctor->name }}</p>
                     <p><span class="label">Téléphone :</span> {{ $doctor->phone ?? 'Non renseigné' }}</p>
                     <p><span class="label">Spécialité :</span> {{ $doctor->speciality }}</p>
