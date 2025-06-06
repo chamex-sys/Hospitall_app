@@ -91,7 +91,6 @@
         </div>
     @endif
 </div>
-@endsection
       <footer class="page-footer">
       </footer>
 
@@ -104,5 +103,7 @@
     <script src="../assets/vendor/wow/wow.min.js"></script>
 
     <script src="../assets/js/theme.js"></script>
+@endsection
+
 
     
