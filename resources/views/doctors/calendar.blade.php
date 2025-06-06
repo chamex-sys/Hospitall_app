@@ -27,26 +27,6 @@
     <div id="appointment-details" class="appointment-details">
         <h3>Appointments for <span id="selected-date"></span></h3>
         <div id="appointments-list"></div>
-        <div id="booking-form-container" class="booking-form-container">
-            <h4>Book an appointment</h4>
-            <form id="booking-form" action="{{ route('appointment.store') }}" method="POST">
-                @csrf
-                <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
-                <input type="hidden" id="appointment-date" name="date" value="">
-                
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="3"></textarea>
-                </div>
-                
-                <button type="submit" class="book-btn">Book Appointment</button>
-            </form>
-        </div>
     </div>
 
     <div class="calendar-footer">
@@ -167,6 +147,7 @@
 .day.other-month {
     color: #ccc;
     background-color: #f5f5f5;
+    cursor: default;
 }
 
 .day.today {
@@ -206,18 +187,15 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.appointment-time {
-    font-weight: bold;
-    color: #00D3AF;
-}
-
 .appointment-patient {
     margin: 5px 0;
+    font-weight: bold;
 }
 
 .appointment-message {
     color: #666;
     font-style: italic;
+    margin: 5px 0;
 }
 
 .appointment-status {
@@ -235,51 +213,6 @@
 
 .status-pending {
     color: orange;
-}
-
-.booking-form-container {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed #ddd;
-}
-
-.booking-form-container h4 {
-    color: #00D3AF;
-    margin-bottom: 15px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
-}
-
-.book-btn {
-    background-color: #00D3AF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.book-btn:hover {
-    background-color: #00B38F;
 }
 
 .calendar-footer {
@@ -363,7 +296,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Appointments data from PHP
+    // Appointments data from PHP - using your existing $appointments variable
     const appointments = @json($appointments);
     
     // Current date
@@ -379,9 +312,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const appointmentDetails = document.getElementById('appointment-details');
     const selectedDateElement = document.getElementById('selected-date');
     const appointmentsList = document.getElementById('appointments-list');
-    const bookingForm = document.getElementById('booking-form');
-    const appointmentDateInput = document.getElementById('appointment-date');
-    const bookingFormContainer = document.getElementById('booking-form-container');
     
     // Initialize calendar
     renderCalendar(currentMonth, currentYear);
@@ -430,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const date = new Date(year, month, i);
             const formattedDate = formatDate(date);
             
-            // Check if this day has appointments
+            // Check if this day has appointments using your existing data structure
             const dayAppointments = appointments.filter(app => app.date === formattedDate);
             const hasAppointments = dayAppointments.length > 0;
             
@@ -442,16 +372,18 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Add click event to show appointments
             dayElement.addEventListener('click', function() {
-                // Remove selected class from all days
-                document.querySelectorAll('.day').forEach(day => {
-                    day.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked day
-                this.classList.add('selected');
-                
-                // Show appointment details
-                showAppointmentDetails(formattedDate, dayAppointments, hasAppointments);
+                if (!this.classList.contains('other-month')) {
+                    // Remove selected class from all days
+                    document.querySelectorAll('.day').forEach(day => {
+                        day.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked day
+                    this.classList.add('selected');
+                    
+                    // Show appointment details
+                    showAppointmentDetails(formattedDate, dayAppointments, hasAppointments);
+                }
             });
             
             calendarDays.appendChild(dayElement);
@@ -491,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return dayElement;
     }
     
-    // Function to show appointment details
+    // Function to show appointment details using your existing data structure
     function showAppointmentDetails(date, dayAppointments, hasAppointments) {
         selectedDateElement.textContent = date;
         appointmentsList.innerHTML = '';
@@ -501,6 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const appointmentItem = document.createElement('div');
                 appointmentItem.classList.add('appointment-item');
                 
+                // Using your existing appointment structure: name, message, status
                 const patientName = document.createElement('div');
                 patientName.classList.add('appointment-patient');
                 patientName.textContent = `Patient: ${appointment.name}`;
@@ -512,6 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const status = document.createElement('div');
                 status.classList.add('appointment-status');
                 
+                // Using your existing status values
                 if (appointment.status === 'Confirmé') {
                     status.classList.add('status-confirmed');
                     status.textContent = '✔ Approved';
@@ -529,25 +463,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 appointmentsList.appendChild(appointmentItem);
             });
-            
-            // Hide booking form if day is booked
-            bookingFormContainer.style.display = 'none';
         } else {
             // Show message if no appointments
             const noAppointments = document.createElement('p');
             noAppointments.textContent = 'No appointments for this day.';
+            noAppointments.style.textAlign = 'center';
+            noAppointments.style.color = '#666';
             appointmentsList.appendChild(noAppointments);
-            
-            // Show booking form
-            bookingFormContainer.style.display = 'block';
-            appointmentDateInput.value = date;
         }
         
         // Show appointment details section
         appointmentDetails.style.display = 'block';
     }
     
-    // Helper function to format date as YYYY-MM-DD
+    // Helper function to format date as YYYY-MM-DD (matching your existing format)
     function formatDate(date) {
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
