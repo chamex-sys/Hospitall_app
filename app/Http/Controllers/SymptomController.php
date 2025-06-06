@@ -9,10 +9,11 @@ use App\Models\Doctor;
 class SymptomController extends Controller
 {
     // Affiche le formulaire
-    public function form()
-    {
-        return view('patient.symptoms');
-    }
+ public function form()
+{
+    $doctor = Doctor::all(); // ou une requête filtrée si besoin
+    return view('patient.symptoms', compact('doctor'));
+}
 
     // Analyse les symptômes et suggère un médecin
     public function analyze(Request $request)
