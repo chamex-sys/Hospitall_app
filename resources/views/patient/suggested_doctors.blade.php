@@ -11,10 +11,7 @@
       
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-@extends('layouts.app') {{-- Adapte selon ton layout --}}
 
-
-@section('content')
      
      <header>
         <div class="topbar">
@@ -354,6 +351,10 @@ hr {
 
 
 </style>
+@extends('layouts.app') {{-- Adapte selon ton layout --}}
+
+
+@section('content')
 <div class="page-hero bg-image overlay-dark" style="background-image: url('{{ asset('assets/img/bg_image_1.jpg') }}');">
     <div class="hero-section text-center">
         <div class="container wow zoomIn">
