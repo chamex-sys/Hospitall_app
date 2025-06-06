@@ -51,6 +51,7 @@
 .btn-primary:hover {
     background-color: #00B38F;
     border-color: #00A481;
+    
 }
 
 .page-section {
@@ -92,6 +93,7 @@ form .text-center {
     }
     .btn-primary {
         width: 100%;
+            display: inline-block;
     }
 }
 
