@@ -194,7 +194,6 @@
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
 
-        <hr>
         <div id="copyright">
             Copyright © 2020 <a href="#">MACode ID</a>. All right reserved
         </div>
@@ -227,6 +226,8 @@
     font-weight: 300;
     display: block;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
 }
 
 .hero-section h1 {
@@ -238,22 +239,27 @@
     border-radius: 10px;
     color: #fff;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .btn-primary {
-    background-color: #00D1A0;
-    border-color: #00B38F;
+    background-color: #00D1A0 !important;
+    border-color: #00B38F !important;
+    color: white !important;
     font-weight: bold;
-    font-size: 18px;
-    padding: 12px 30px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
-    text-align: center;
+    margin-left: 10px;
+    transition: background-color 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #00B38F;
-    border-color: #00A481;
+    background-color: #00B38F !important;
+    border-color: #00A481 !important;
+    color: white !important;
 }
 
 .page-section {
@@ -560,7 +566,6 @@ form .text-center {
     text-align: center;
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-sosmed h5 {
@@ -662,6 +667,10 @@ form .text-center {
     font-weight: bold;
     text-decoration: none;
     color: #333;
+}
+
+.navbar-brand .text-primary {
+    color: #00D1A0 !important;
 }
 
 .input-group.input-navbar {
