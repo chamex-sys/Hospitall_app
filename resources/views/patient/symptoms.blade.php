@@ -4,6 +4,10 @@
 
 <style>
 
+.hero-section a.btn-primary {
+    display: block;
+    margin-top: 30px; /* ou comme tu veux */
+}
 
  
 .page-hero {
