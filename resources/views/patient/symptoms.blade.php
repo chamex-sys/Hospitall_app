@@ -1,9 +1,5 @@
 @extends('layouts.app')
-
-@section('content')
-      <link rel="stylesheet" href="../assets/css/maicons.css">
-
-
+ <link rel="stylesheet" href="../assets/css/maicons.css">
 
       <link rel="stylesheet" href="../assets/css/bootstrap.css">
 
@@ -15,6 +11,9 @@
       
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+@section('content')
+     
      <header>
         <div class="topbar">
           <div class="container">
