@@ -8,7 +8,7 @@
     }
 
     .container {
-        max-width: 1100px;
+        max-width: 1050px;
         margin: 40px auto;
     }
 
@@ -38,7 +38,7 @@
 
     .card img {
         width: 250px;
-        height: 300px;
+        height: 350px;
         object-fit: cover;
         border-radius: 8px;
         margin-bottom: 15px;
