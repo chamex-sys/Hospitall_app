@@ -108,7 +108,7 @@
         </div>
     </div>
 </div>
-<style>
+<style>   
  .hero-section a.btn-primary {
     display: block;
     margin: 30px auto 0 auto; /* 30px en haut, auto à gau*/
