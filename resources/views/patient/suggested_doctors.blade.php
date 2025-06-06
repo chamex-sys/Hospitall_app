@@ -77,6 +77,90 @@
         font-size: 18px;
         color: #555;
     }
+    .page-footer {
+    background-color: #2d3e3f;
+    color: #d3d3d3;
+    padding: 60px 0 30px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-footer h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu a {
+    color: #cbd5d8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+    color: #00D1A0;
+}
+
+.footer-link {
+    display: block;
+    color: #cbd5d8;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #00D1A0;
+}
+
+.footer-sosmed a {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #1f2b2c;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-sosmed a:hover {
+    background-color: #00D1A0;
+    color: #ffffff;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 30px;
+    color: #bcbcbc;
+    font-size: 14px;
+}
+
+#copyright a {
+    color: #00D1A0;
+    text-decoration: none;
+}
+
+#copyright a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 40px;
+}
+
 </style>
 
 <div class="container">
