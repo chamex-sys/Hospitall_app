@@ -100,8 +100,9 @@
 <div class="page-hero bg-image overlay-dark" style="background-image: url('{{ asset('assets/img/bg_image_1.jpg') }}');">
     <div class="hero-section text-center">
         <div class="container wow zoomIn">
-            <span class="subhead">Let's discover which doctor is the best for you!</span>
-            <h1 class="display-4">Describe your symptoms</h1>
+  <span class="subhead">See when your favorite doctor is available ! </span>
+<h1 class="display-4">Pick you day </h1>
+
             <a href="#app" class="btn btn-primary mt-4 d-block">Let's Consult</a>
         </div>
     </div>
