@@ -391,7 +391,6 @@ hr {
         // Premier affichage
         renderDoctors();
     </script>
-@endsection
 
 
 
