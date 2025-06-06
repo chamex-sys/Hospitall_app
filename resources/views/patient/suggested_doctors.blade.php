@@ -270,6 +270,16 @@ hr {
 
 
 </style>
+<div class="page-hero bg-image overlay-dark" style="background-image: url('{{ asset('assets/img/bg_image_1.jpg') }}');">
+    <div class="hero-section text-center">
+        <div class="container wow zoomIn">
+            <span class="subhead">Let's discover which doctor is the best for you!</span>
+            <h1 class="display-4">Describe your symptoms</h1>
+            <a href="#app" class="btn btn-primary mt-4 d-block">Let's Consult</a>
+        </div>
+    </div>
+</div>
+
 
 <div class="container">
 <h1>Results for : "{{ $symptomsInput }}"</h1>
