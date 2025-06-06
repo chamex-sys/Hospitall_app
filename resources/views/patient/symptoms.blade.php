@@ -7,6 +7,7 @@
 .hero-section a.btn-primary {
     display: block;
     margin-top: 30px; /* ou comme tu veux */
+    width: 200px ;
 }
 
  
