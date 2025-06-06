@@ -118,9 +118,7 @@
     position: relative;
     text-align: center;
 }
-.navbar .container {
-    max-width: 900px; /* ou moins : 800px, 750px selon ce que tu veux */
-}
+
 
 .hero-section .subhead {
     font-size: 20px;
@@ -191,12 +189,10 @@
     }
 
     .container {
-        max-width: 1050px;
+        max-width: 300px;
         margin: 40px auto;
     }
-    header{
-        height: 200px;
-    }
+ 
 
     h1 {
         color: #00D1A0;
