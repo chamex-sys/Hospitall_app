@@ -194,6 +194,9 @@
         max-width: 1050px;
         margin: 40px auto;
     }
+    header{
+        height: 200px;
+    }
 
     h1 {
         color: #00D1A0;
