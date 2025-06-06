@@ -16,8 +16,8 @@
         color: #00D1A0;
         margin-bottom: 30px;
         text-align: center;
-        front-weight: 9px ;
-        front-size: 25px ;
+        font-weight: 9px ;
+        font-size: 25px ;
     }
 
     .grid {
