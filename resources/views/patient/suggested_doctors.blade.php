@@ -69,21 +69,21 @@
 </style>
 
 <div class="container">
-<h2>Résultats pour : "{{ $symptomsInput }}"</h2>
+<h2>Results for : "{{ $symptomsInput }}"</h2>
 
     @if($doctors->isEmpty())
         <div class="no-result">
-            Aucun médecin correspondant à ces symptômes.
+            No doctor is associated to these symptoms.
         </div>
     @else
         <div class="grid">
             @foreach($doctors as $doctor)
                 <div class="card">
                     <img src="/doctorimage/{{$doctor->image}}" alt="Image de {{ $doctor->name }}" height="25px" width="10px">
-                    <p><span class="label">Nom :</span> {{ $doctor->name }}</p>
-                    <p><span class="label">Téléphone :</span> {{ $doctor->phone ?? 'Non renseigné' }}</p>
-                    <p><span class="label">Spécialité :</span> {{ $doctor->speciality }}</p>
-                    <p><span class="label">Chambre :</span> {{ $doctor->room }}</p>
+                    <p><span class="label">Name</span> {{ $doctor->name }}</p>
+                    <p><span class="label">Phone :</span> {{ $doctor->phone ?? 'Non renseigné' }}</p>
+                    <p><span class="label">Spéciality :</span> {{ $doctor->speciality }}</p>
+                    <p><span class="label">Room :</span> {{ $doctor->room }}</p>
                 </div>
             @endforeach
         </div>
