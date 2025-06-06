@@ -325,74 +325,78 @@ hr {
 
 </style>
 
-
-
-
-
-
-
 @extends('layouts.app')
 
 @section('content')
+    <div class="container mx-auto py-8">
+        <h2 class="text-2xl font-bold mb-4">Docteurs suggérés :</h2>
 
-<h2>Docteurs suggérés :</h2>
+        <!-- Conteneur pour les cartes de docteurs -->
+        <div id="doctor-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <!-- Le contenu sera inséré par JavaScript -->
+        </div>
 
-<!-- Conteneur vide, rempli par JavaScript -->
-<div id="doctor-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <!-- Rempli dynamiquement -->
-</div>
+        <!-- Boutons navigation -->
+        <div class="flex justify-center gap-4">
+            <button id="prev-btn" class="bg-blue-600 text-white px-4 py-2 rounded" disabled>← Précédent</button>
+            <button id="next-btn" class="bg-blue-600 text-white px-4 py-2 rounded">Suivant →</button>
+        </div>
+    </div>
 
-<!-- Boutons de navigation -->
-<div class="flex justify-center items-center mt-4 space-x-4">
-    <button id="prev-btn" class="bg-blue-500 text-white px-4 py-2 rounded">← Précédent</button>
-    <button id="next-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Suivant →</button>
-</div>
+    <!-- JavaScript -->
+    <script>
+        const allDoctors = @json($doctors);
+        const doctorsPerPage = 3;
+        let currentPage = 0;
 
-<!-- Script JavaScript -->
-<script>
-    const allDoctors = @json($doctors); // tous les docteurs envoyés par le contrôleur
-    let currentPage = 0;
-    const doctorsPerPage = 3;
-
-    function renderDoctors() {
         const container = document.getElementById('doctor-container');
-        container.innerHTML = '';
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
 
-        const start = currentPage * doctorsPerPage;
-        const end = start + doctorsPerPage;
-        const currentDoctors = allDoctors.slice(start, end);
+        function renderDoctors() {
+            container.innerHTML = '';
 
-        currentDoctors.forEach(doctor => {
-            const card = document.createElement('div');
-            card.className = 'border rounded p-4 shadow';
-            card.innerHTML = `
-                <h3 class="text-xl font-semibold">${doctor.name}</h3>
-                <p><strong>Spécialité:</strong> ${doctor.speciality}</p>
-            `;
-            container.appendChild(card);
+            const start = currentPage * doctorsPerPage;
+            const end = start + doctorsPerPage;
+            const visibleDoctors = allDoctors.slice(start, end);
+
+            visibleDoctors.forEach(doctor => {
+                const card = document.createElement('div');
+                card.className = 'border p-4 rounded shadow';
+                card.innerHTML = `
+                    <h3 class="text-xl font-semibold mb-2">${doctor.name}</h3>
+                    <p class="text-gray-700"><strong>Spécialité:</strong> ${doctor.speciality}</p>
+                `;
+                container.appendChild(card);
+            });
+
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = end >= allDoctors.length;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                renderDoctors();
+            }
         });
 
-        // Désactiver les boutons si début ou fin
-        document.getElementById('prev-btn').disabled = currentPage === 0;
-        document.getElementById('next-btn').disabled = (currentPage + 1) * doctorsPerPage >= allDoctors.length;
-    }
+        nextBtn.addEventListener('click', () => {
+            if ((currentPage + 1) * doctorsPerPage < allDoctors.length) {
+                currentPage++;
+                renderDoctors();
+            }
+        });
 
-    document.getElementById('prev-btn').addEventListener('click', () => {
-        if (currentPage > 0) {
-            currentPage--;
-            renderDoctors();
-        }
-    });
+        // Premier affichage
+        renderDoctors();
+    </script>
+@endsection
 
-    document.getElementById('next-btn').addEventListener('click', () => {
-        if ((currentPage + 1) * doctorsPerPage < allDoctors.length) {
-            currentPage++;
-            renderDoctors();
-        }
-    });
 
-    renderDoctors();
-</script>
+
+
+
 
 
 
